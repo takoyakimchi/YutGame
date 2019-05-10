@@ -22,7 +22,7 @@ enum Yuts {
 	DO=1, GAE, GEOL, YUT, MO, BACKDO, BACKDO_NEW
 }
 
-// 내 차례면, 윷 던진다.
+// 내 차례면, 윷 던진다. (이건 스레드 내부에?)
 if(myTurn){
 	throwYut();
 }
@@ -34,6 +34,7 @@ Yuts getYut(){
 
 // 도 or 개 or 걸이 나왔을 때
 void gotDoGaeGeol(int n){
+	// 저장된 것들에 무언가가 있을 경우, 나온 것 역시 저장하고 nextTurn() 한다.
 	if(there's no marker) placeNew(n);
 	else if(player chooses to place a new marker) place new and go for n;
 	else choose one and go for n;
@@ -54,7 +55,11 @@ void gotMo(){
 
 // 빽도가 나왔을 때
 void gotBackDo(){
-
+	// 자신의 말이 말판에 하나도 없을 경우, 아무것도 안 한다.
+	if(no marker on board) do nothing;
+	else{
+		select one marker and move(-1);
+	}
 }
 
 // 새로운 빽도가 나왔을 때
@@ -100,10 +105,9 @@ void nextTurn(){
 	}
 }
 
-// 말 업기
-
-
 // 말 잡기
-
+void catchMarker(){
+	이동 완료 후 해당 칸에 상대의 말이 있을 경우 상대의 말을 모두 다 잡고 한 번 더 던지기.
+}
 
 // 말판은 어떻게?
