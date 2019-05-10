@@ -1,0 +1,109 @@
+
+// 말은 어떻게?
+class Marker{
+	public int index { get; set; } // 플레이어의 몇 번째 말?
+	public int position { get; set; } // 현재 위치가 어디에 있는가?
+	public bool isFinished { get; set; } // 말이 골인했는가?
+
+	public Marker(){
+		this.position = 0;
+		this.isFinished = false;
+	}
+}
+
+// 말이 움직이는 방식
+void move(Marker marker, int amount){
+	// 현재 칸에 또다른 내 말이 있다면 그것도 같이 움직인다.
+	// 현재 모서리 칸에 있다면 예외적으로 움직인다. 그게 아니라면, 그냥 움직인다.
+}
+
+// 도개걸윷모, 백도, 새로운 백도에 대한 enum
+enum Yuts {
+	DO=1, GAE, GEOL, YUT, MO, BACKDO, BACKDO_NEW
+}
+
+// 내 차례면, 윷 던진다.
+if(myTurn){
+	throwYut();
+}
+
+// 확률에 맞게 윷 리턴하는 함수
+Yuts getYut(){
+	
+}
+
+// 도 or 개 or 걸이 나왔을 때
+void gotDoGaeGeol(int n){
+	if(there's no marker) placeNew(n);
+	else if(player chooses to place a new marker) place new and go for n;
+	else choose one and go for n;
+	nextTurn();
+}
+
+// 윷이 나왔을 때
+void gotYut(){
+	save(YUT);
+	throwYut();
+}
+
+// 모가 나왔을 때
+void gotMo(){
+	save(MO);
+	throwYut();
+}
+
+// 빽도가 나왔을 때
+void gotBackDo(){
+
+}
+
+// 새로운 빽도가 나왔을 때
+void gotBackDoNew(){
+
+}
+
+// 윷 던지기
+void throwYut() {
+	yut = getYut();
+
+	switch(yut){
+	case DO:
+		gotDoGaeGeol(1);
+		break;
+	case GAE:
+		gotDoGaeGeol(2);
+		break;
+	case GEOL:
+		gotDoGaeGeol(3);
+		break;
+	case YUT:
+		goYut();
+		break;
+	case MO:
+		gotMo();
+		break;
+	case BACKDO:
+		gotBackDo();
+		break;
+	case BACKDO_NEW:
+		gotBackDoNew();
+		break;
+	}
+}
+
+void nextTurn(){
+	if(there's something left in saved Yuts){
+		남아 있는 윷을 모두 사용
+	}
+	else{
+		서버에게 다음 차례로 가라고 요청 & 내 차례 끝
+	}
+}
+
+// 말 업기
+
+
+// 말 잡기
+
+
+// 말판은 어떻게?
