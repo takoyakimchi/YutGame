@@ -305,9 +305,18 @@ namespace Yutnori
                 // 포트 번호 예외처리
                 if(!int.TryParse(txt_port.Text, out port))
                 {
-                    MsgBoxHelper.Error("포트 번호가 잘못 입력되었거나 입력되지 않았습니다.");
+                    lbl_loginAlert.ForeColor = Color.Red;
+                    lbl_loginAlert.Text = "잘못된 포트번호입니다.";
                     txt_port.Focus();
                     txt_port.SelectAll();
+                    return;
+                }
+                if (txt_nickname.Text == "")
+                {
+                    lbl_loginAlert.ForeColor = Color.Red;
+                    lbl_loginAlert.Text = "잘못된 닉네임입니다.";
+                    txt_nickname.Focus();
+                    txt_nickname.SelectAll();
                     return;
                 }
 
@@ -340,20 +349,27 @@ namespace Yutnori
 
         private void btn_Client_Click(object sender, EventArgs e)
         {
-            if (btn_Client.Text == "입장")
+            if (client_socket.Connected)
             {
-                if (client_socket.Connected)
-                {
-                    MsgBoxHelper.Error("이미 연결되어 있습니다!");
-                    return;
-                }
+                MsgBoxHelper.Error("이미 연결되어 있습니다!");
+                return;
+            }
 
             int port;
             if (!int.TryParse(txt_port.Text, out port))
             {
-                MsgBoxHelper.Error("포트 번호가 잘못 입력되었거나 입력되지 않았습니다.");
+                lbl_loginAlert.ForeColor = Color.Red;
+                lbl_loginAlert.Text = "잘못된 포트번호입니다.";
                 txt_port.Focus();
                 txt_port.SelectAll();
+                return;
+            }
+            if (txt_nickname.Text == "")
+            {
+                lbl_loginAlert.ForeColor = Color.Red;
+                lbl_loginAlert.Text = "잘못된 닉네임입니다.";
+                txt_nickname.Focus();
+                txt_nickname.SelectAll();
                 return;
             }
 
@@ -380,8 +396,8 @@ namespace Yutnori
             // 서버에게 닉네임을 보낸다.
             SendNickname();
 
-                // 서버에게서 플레이어 번호를 할당받는다.
-                GetPlayerNum();
+            // 서버에게서 플레이어 번호를 할당받는다.
+            GetPlayerNum();
 
             //게임인터페이스로 이동
             changePhase(PHASE.LOBBY);    // 로비로 이동.(준비 전 상태)
@@ -408,19 +424,14 @@ namespace Yutnori
             btn_send.Enabled = true;
             btn_ready.Enabled = true;
 
-                // 연결 완료, 서버에서 데이터가 올 수 있으므로 수신 대기한다.
-                AsyncObject obj = new AsyncObject(4096);
-                // 데이터 송신을 대기할 소켓 지정
-                obj.WorkingSocket = client_socket;
-                // 해당 소켓이 비동기로 데이터를 받는 함수 BeginReceive 호출
-                client_socket.BeginReceive(obj.Buffer, 0, obj.BufferSize, 0, DataReceived, obj);
-            }
-            else
-            {
-                //Disconnect();
-            }
+            // 연결 완료, 서버에서 데이터가 올 수 있으므로 수신 대기한다.
+            AsyncObject obj = new AsyncObject(4096);
+            // 데이터 송신을 대기할 소켓 지정
+            obj.WorkingSocket = client_socket;
+            // 해당 소켓이 비동기로 데이터를 받는 함수 BeginReceive 호출
+            client_socket.BeginReceive(obj.Buffer, 0, obj.BufferSize, 0, DataReceived, obj);
         }
-        
+
         void Send()
         {
             if(is_server)  // 함수를 호출한 프로세스가 서버일 경우

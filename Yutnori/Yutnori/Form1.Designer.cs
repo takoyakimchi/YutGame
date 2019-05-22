@@ -150,7 +150,7 @@
             this.pnl_top.Location = new System.Drawing.Point(639, 12);
             this.pnl_top.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.pnl_top.Name = "pnl_top";
-            this.pnl_top.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_top.Padding = new System.Windows.Forms.Padding(4);
             this.pnl_top.Size = new System.Drawing.Size(328, 230);
             this.pnl_top.TabIndex = 5;
             // 
@@ -259,7 +259,7 @@
             this.pnl_login.Location = new System.Drawing.Point(129, 182);
             this.pnl_login.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.pnl_login.Name = "pnl_login";
-            this.pnl_login.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_login.Padding = new System.Windows.Forms.Padding(4);
             this.pnl_login.Size = new System.Drawing.Size(363, 156);
             this.pnl_login.TabIndex = 8;
             // 
@@ -671,7 +671,7 @@
             this.pnl_middle.Location = new System.Drawing.Point(639, 248);
             this.pnl_middle.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.pnl_middle.Name = "pnl_middle";
-            this.pnl_middle.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_middle.Padding = new System.Windows.Forms.Padding(4);
             this.pnl_middle.Size = new System.Drawing.Size(328, 100);
             this.pnl_middle.TabIndex = 7;
             // 
@@ -725,7 +725,6 @@
             this.btn_ready.TabIndex = 8;
             this.btn_ready.Text = "준비";
             this.btn_ready.UseVisualStyleBackColor = true;
-            this.btn_ready.Click += new System.EventHandler(this.btn_ready_Click);
             // 
             // btn_help
             // 
@@ -749,7 +748,7 @@
             this.pnl_bottom.Location = new System.Drawing.Point(639, 354);
             this.pnl_bottom.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.pnl_bottom.Name = "pnl_bottom";
-            this.pnl_bottom.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_bottom.Padding = new System.Windows.Forms.Padding(4);
             this.pnl_bottom.Size = new System.Drawing.Size(328, 178);
             this.pnl_bottom.TabIndex = 8;
             // 
