@@ -52,7 +52,7 @@ namespace Yutnori
         // 클라이언트 측 필드
         Socket client_socket;   // 클라이언트가 서버와 연결한 소켓
         string my_nickname = "Client";  // 클라이언트 자신의 닉네임
-        int my_player_num = -1;     // 클라이언트 자신의 플레이어 번호
+        int my_player_num = 1;     // 클라이언트 자신의 플레이어 번호 -> 서버는 1, 클라이언트는 추후 변경될 것임.
         
         PHASE phase = PHASE.LOGIN;           // 게임의 현재 페이즈
 
