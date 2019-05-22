@@ -893,5 +893,80 @@ namespace Yutnori
                 btn_Client.Text = "입장";
             }));*/
         }
+
+        private void btn_help_Click(object sender, EventArgs e)
+        {
+            Form2 child = new Form2();
+            child.Show();
+        }
+
+        int yutsang = 0; //윷의 상태를 나타냄
+
+        private void btn_Roll_Click(object sender, EventArgs e)
+        {
+
+            Random rand = new Random();
+            int number = rand.Next(1000);
+            if (120 <= number && number < 250) // 도 1
+            {
+                if (120 <= number && number < 152.5)
+                    pb_yut1.Image = Properties.Resources.yut_back0;
+                else if (152.5 <= number && number < 185)
+                    pb_yut2.Image = Properties.Resources.yut_back0;
+                else if (185 <= number && number < 217.5)
+                    pb_yut3.Image = Properties.Resources.yut_back0;
+                else if (217.5 <= number && number < 250)
+                    pb_yut4.Image = Properties.Resources.yut_back0;
+
+                yutsang = 1;
+            }
+            else if (0 <= number && number < 62) // 빽도 -1
+            {
+                if (0 <= number && number < 15)
+                    pb_yut1.Image = Properties.Resources.yut_back1;
+                else if (15 <= number && number < 30)
+                    pb_yut2.Image = Properties.Resources.yut_back1;
+                else if (30 <= number && number < 45)
+                    pb_yut3.Image = Properties.Resources.yut_back1;
+                else if (45 <= number && number < 62)
+                    pb_yut4.Image = Properties.Resources.yut_back1;
+
+                yutsang = -1;
+            }
+            else if (62 <= number && number < 120) // 빨빽 -2
+            {
+                if (62 <= number && number < 75)
+                    pb_yut1.Image = Properties.Resources.yut_back2;
+                else if (75 <= number && number < 90)
+                    pb_yut2.Image = Properties.Resources.yut_back2;
+                else if (90 <= number && number < 105)
+                    pb_yut3.Image = Properties.Resources.yut_back2;
+                else if (105 <= number && number < 120)
+                    pb_yut4.Image = Properties.Resources.yut_back2;
+                yutsang = -2;
+            }
+            else if (312 <= number && number < 625) // 개 2
+            {
+                yutsang = 2;
+            }
+            else if (250 <= number && number < 312) //두개빽 -3
+            {
+                yutsang = -3;
+            }
+            else if (625 <= number && number < 875) // 걸 3
+            {
+                yutsang = 3;
+            }
+            else if (875 <= number && number < 940) // 윷 4
+            {
+                yutsang = 4;
+            }
+            else if (940 <= number)//모 5
+            {
+                yutsang = 5;
+            }
+
+            //MessageBox.Show(yutsang.ToString());
+        }
     }
 }

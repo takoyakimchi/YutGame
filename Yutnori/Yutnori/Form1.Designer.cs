@@ -197,7 +197,7 @@
             this.txt_send.Location = new System.Drawing.Point(58, 194);
             this.txt_send.Margin = new System.Windows.Forms.Padding(2);
             this.txt_send.Name = "txt_send";
-            this.txt_send.Size = new System.Drawing.Size(186, 28);
+            this.txt_send.Size = new System.Drawing.Size(186, 25);
             this.txt_send.TabIndex = 5;
             this.txt_send.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_send_KeyDown);
             // 
@@ -279,7 +279,7 @@
             this.txt_port.Location = new System.Drawing.Point(275, 28);
             this.txt_port.Margin = new System.Windows.Forms.Padding(2);
             this.txt_port.Name = "txt_port";
-            this.txt_port.Size = new System.Drawing.Size(72, 28);
+            this.txt_port.Size = new System.Drawing.Size(72, 25);
             this.txt_port.TabIndex = 1;
             // 
             // ip_port
@@ -310,7 +310,7 @@
             this.txt_ip.Location = new System.Drawing.Point(51, 28);
             this.txt_ip.Margin = new System.Windows.Forms.Padding(2);
             this.txt_ip.Name = "txt_ip";
-            this.txt_ip.Size = new System.Drawing.Size(152, 28);
+            this.txt_ip.Size = new System.Drawing.Size(152, 25);
             this.txt_ip.TabIndex = 0;
             // 
             // lbl_nickname
@@ -387,7 +387,7 @@
             // 
             this.Step_9.Image = ((System.Drawing.Image)(resources.GetObject("Step_9.Image")));
             this.Step_9.Location = new System.Drawing.Point(134, 32);
-            this.Step_9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_9.Margin = new System.Windows.Forms.Padding(2);
             this.Step_9.Name = "Step_9";
             this.Step_9.Size = new System.Drawing.Size(40, 42);
             this.Step_9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -418,7 +418,7 @@
             // 
             this.Step_7.Image = ((System.Drawing.Image)(resources.GetObject("Step_7.Image")));
             this.Step_7.Location = new System.Drawing.Point(259, 32);
-            this.Step_7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_7.Margin = new System.Windows.Forms.Padding(2);
             this.Step_7.Name = "Step_7";
             this.Step_7.Size = new System.Drawing.Size(40, 42);
             this.Step_7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -429,7 +429,7 @@
             // 
             this.Step_107.Image = ((System.Drawing.Image)(resources.GetObject("Step_107.Image")));
             this.Step_107.Location = new System.Drawing.Point(283, 138);
-            this.Step_107.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_107.Margin = new System.Windows.Forms.Padding(2);
             this.Step_107.Name = "Step_107";
             this.Step_107.Size = new System.Drawing.Size(40, 42);
             this.Step_107.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -470,7 +470,7 @@
             // 
             this.Step_214.Image = ((System.Drawing.Image)(resources.GetObject("Step_214.Image")));
             this.Step_214.Location = new System.Drawing.Point(283, 253);
-            this.Step_214.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_214.Margin = new System.Windows.Forms.Padding(2);
             this.Step_214.Name = "Step_214";
             this.Step_214.Size = new System.Drawing.Size(40, 42);
             this.Step_214.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -531,7 +531,7 @@
             // 
             this.Step_4.Image = ((System.Drawing.Image)(resources.GetObject("Step_4.Image")));
             this.Step_4.Location = new System.Drawing.Point(385, 97);
-            this.Step_4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_4.Margin = new System.Windows.Forms.Padding(2);
             this.Step_4.Name = "Step_4";
             this.Step_4.Size = new System.Drawing.Size(40, 42);
             this.Step_4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -542,7 +542,7 @@
             // 
             this.Step_3.Image = ((System.Drawing.Image)(resources.GetObject("Step_3.Image")));
             this.Step_3.Location = new System.Drawing.Point(385, 163);
-            this.Step_3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_3.Margin = new System.Windows.Forms.Padding(2);
             this.Step_3.Name = "Step_3";
             this.Step_3.Size = new System.Drawing.Size(40, 42);
             this.Step_3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -563,7 +563,7 @@
             // 
             this.Step_2.Image = ((System.Drawing.Image)(resources.GetObject("Step_2.Image")));
             this.Step_2.Location = new System.Drawing.Point(385, 228);
-            this.Step_2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_2.Margin = new System.Windows.Forms.Padding(2);
             this.Step_2.Name = "Step_2";
             this.Step_2.Size = new System.Drawing.Size(40, 42);
             this.Step_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -615,7 +615,7 @@
             this.Step_15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Step_15.Image = ((System.Drawing.Image)(resources.GetObject("Step_15.Image")));
             this.Step_15.Location = new System.Drawing.Point(58, 347);
-            this.Step_15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_15.Margin = new System.Windows.Forms.Padding(2);
             this.Step_15.Name = "Step_15";
             this.Step_15.Size = new System.Drawing.Size(64, 67);
             this.Step_15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -627,7 +627,7 @@
             this.Step_108.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Step_108.Image = ((System.Drawing.Image)(resources.GetObject("Step_108.Image")));
             this.Step_108.Location = new System.Drawing.Point(216, 183);
-            this.Step_108.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_108.Margin = new System.Windows.Forms.Padding(2);
             this.Step_108.Name = "Step_108";
             this.Step_108.Size = new System.Drawing.Size(64, 67);
             this.Step_108.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -639,7 +639,7 @@
             this.Step_10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Step_10.Image = ((System.Drawing.Image)(resources.GetObject("Step_10.Image")));
             this.Step_10.Location = new System.Drawing.Point(58, 20);
-            this.Step_10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_10.Margin = new System.Windows.Forms.Padding(2);
             this.Step_10.Name = "Step_10";
             this.Step_10.Size = new System.Drawing.Size(64, 67);
             this.Step_10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -651,7 +651,7 @@
             this.Step_0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Step_0.Image = ((System.Drawing.Image)(resources.GetObject("Step_0.Image")));
             this.Step_0.Location = new System.Drawing.Point(373, 347);
-            this.Step_0.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_0.Margin = new System.Windows.Forms.Padding(2);
             this.Step_0.Name = "Step_0";
             this.Step_0.Size = new System.Drawing.Size(64, 67);
             this.Step_0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -663,7 +663,7 @@
             this.Step_5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Step_5.Image = ((System.Drawing.Image)(resources.GetObject("Step_5.Image")));
             this.Step_5.Location = new System.Drawing.Point(373, 20);
-            this.Step_5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_5.Margin = new System.Windows.Forms.Padding(2);
             this.Step_5.Name = "Step_5";
             this.Step_5.Size = new System.Drawing.Size(64, 67);
             this.Step_5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -767,7 +767,6 @@
             // 
             // btn_Roll
             // 
-            this.btn_Roll.Enabled = false;
             this.btn_Roll.Location = new System.Drawing.Point(129, 138);
             this.btn_Roll.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Roll.Name = "btn_Roll";
@@ -812,7 +811,6 @@
             // 
             // pb_yut1
             // 
-            this.pb_yut1.Image = ((System.Drawing.Image)(resources.GetObject("pb_yut1.Image")));
             this.pb_yut1.Location = new System.Drawing.Point(58, 7);
             this.pb_yut1.Margin = new System.Windows.Forms.Padding(10, 2, 10, 2);
             this.pb_yut1.Name = "pb_yut1";
@@ -820,7 +818,6 @@
             this.pb_yut1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_yut1.TabIndex = 2;
             this.pb_yut1.TabStop = false;
-            this.pb_yut1.Click += new System.EventHandler(this.pb_yut1_Click);
             // 
             // img_pNumber
             // 
