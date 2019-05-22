@@ -13,6 +13,10 @@
  * 클라이언트를 종료하면 서버가 종료되는 오류 존재
  * 클라이언트가 4명 이상 접속할 때 예외처리가 되는 지 모르겠음
  * 가끔 입력 형식이 이상하다고 에러뜸. -> 아직 무슨 에러인지 확인을 못함
+ * 
+ * 2019-05-22 구현계획
+ * 혼자서라도 말을 움직일 수 있게 구현한 후, 여러 플레이어 구현
+ * 준비 구현
  */
 
 using System;
@@ -51,6 +55,7 @@ namespace Yutnori
         int my_player_num = -1;     // 클라이언트 자신의 플레이어 번호
         
         PHASE phase = PHASE.LOGIN;           // 게임의 현재 페이즈
+
         enum PHASE //게임 페이즈
         {
             LOGIN,      //로그인화면
@@ -372,7 +377,8 @@ namespace Yutnori
             }
         }
         
-        void Send()
+        // 메시지 전송을 담당하는 함수
+        private void Send()
         {
             if(is_server)  // 함수를 호출한 프로세스가 서버일 경우
             {
@@ -384,38 +390,45 @@ namespace Yutnori
 
                 // 보낼 텍스트 지정
                 string tts = txt_send.Text.Trim();
+
                 // 텍스트박스 예외처리
-                if(string.IsNullOrEmpty(tts)) {
-                    //MsgBoxHelper.Warn("텍스트가 입력되지 않았습니다!");
-                    txt_send.Focus();
-                    return;
-                }
+                //if(string.IsNullOrEmpty(tts)) {
+                //    //MsgBoxHelper.Warn("텍스트가 입력되지 않았습니다!");
+                //    txt_send.Focus();
+                //    return;
+                //}
 
-                // 서버의 닉네임과 메세지 및 플레이어 번호(1)를 전송한다.
-                // 문자열을 utf8 형식의 바이트로 변환한다. ('\x01'은 구분자.)
-                byte[] bDts = Encoding.UTF8.GetBytes(server_nickname + '\x01' + tts + '\x01' + "1");
+                // 보낼 텍스트가 비어 있지 않다면
+                if(!string.IsNullOrEmpty(tts)) {
+                    // 서버의 닉네임과 메세지 및 플레이어 번호(1)를 전송한다.
+                    // 문자열을 utf8 형식의 바이트로 변환한다. ('\x01'은 구분자.)
+                    byte[] bDts = Encoding.UTF8.GetBytes(server_nickname + '\x01' + tts + '\x01' + "1");
 
-                // 연결된 모든 클라이언트에게 전송한다.
-                foreach(string nickname in connected_clients.Keys) {
-                    Socket socket = connected_clients[nickname];
-                    try {
-                        socket.Send(bDts);
-                    }
-                    catch {
-                        // 오류 발생하면 전송 취소하고 리스트에서 삭제한다.
+                    // 연결된 모든 클라이언트에게 전송한다.
+                    foreach(string nickname in connected_clients.Keys) {
+                        Socket socket = connected_clients[nickname];
                         try {
-                            socket.Dispose();
+                            socket.Send(bDts);
                         }
                         catch {
+                            // 오류 발생하면 전송 취소하고 리스트에서 삭제한다.
+                            try {
+                                socket.Dispose();
+                            }
+                            catch {
 
+                            }
+                            connected_clients.Remove(nickname);
                         }
-                        connected_clients.Remove(nickname);
                     }
-                }
 
-                // 전송 완료 후 텍스트 박스에 추가하고, 원래의 내용은 지운다.
-                AppendText(rtb_chat, string.Format("(1P){0}: {1}", server_nickname.ToString(), tts));
-                txt_send.Clear();
+                    // 전송 완료 후 텍스트 박스에 추가하고, 원래의 내용은 지운다.
+                    AppendText(rtb_chat, string.Format("(1P){0}: {1}", server_nickname.ToString(), tts));
+                    txt_send.Clear();
+
+                    // 커서를 텍스트박스로
+                    txt_send.Focus();
+                }
             }
             else  // 함수를 호출한 프로세스가 클라이언트이면
             {
@@ -427,28 +440,44 @@ namespace Yutnori
 
                 // 보낼 텍스트 지정
                 string tts = txt_send.Text.Trim();
-                if(string.IsNullOrEmpty(tts)) {
-                    //MsgBoxHelper.Warn("텍스트가 입력되지 않았습니다!");
+
+                // 텍스트박스가 비어 있는 경우
+                //if(string.IsNullOrEmpty(tts)) {
+                //    //MsgBoxHelper.Warn("텍스트가 입력되지 않았습니다!");
+                //    txt_send.Focus();
+                //    return;
+                //}
+
+                // 보낼 텍스트가 비어 있지 않으면
+                if(!string.IsNullOrEmpty(tts)) {
+                    // 클라이언트의 닉네임과 메세지를 전송한다.
+                    // 문자열을 utf8 형식의 바이트로 변환한다. ('\x01'은 구분자)
+                    byte[] bDts = Encoding.UTF8.GetBytes(my_nickname + '\x01' + tts + '\x01' + my_player_num.ToString());
+
+                    // 서버에 전송한다.
+                    client_socket.Send(bDts);
+
+                    // 전송 완료 후 텍스트 박스에 추가하고, 원래의 내용은 지운다.
+                    AppendText(rtb_chat, string.Format("({0}P){1}: {2}", my_player_num, my_nickname, tts));
+                    txt_send.Clear();
+
+                    // 커서를 텍스트박스로
                     txt_send.Focus();
-                    return;
                 }
-
-                // 클라이언트의 닉네임과 메세지를 전송한다.
-                // 문자열을 utf8 형식의 바이트로 변환한다. ('\x01'은 구분자)
-                byte[] bDts = Encoding.UTF8.GetBytes(my_nickname + '\x01' + tts + '\x01' + my_player_num.ToString());
-
-                // 서버에 전송한다.
-                client_socket.Send(bDts);
-
-                // 전송 완료 후 텍스트 박스에 추가하고, 원래의 내용은 지운다.
-                AppendText(rtb_chat, string.Format("({0}P){1}: {2}", my_player_num, my_nickname, tts));
-                txt_send.Clear();
             }
         }
 
+        // Send 버튼을 눌렀을 때의 event handler
         private void btn_send_Click(object sender, EventArgs e)
         {// 데이터 전송 - 서버, 클라이언트 둘 다 사용
-            Send();
+            Send(); // 메시지 전송
+        }
+
+        // 메시지 text box에서 엔터를 눌렀을 때의 event handler
+        private void txt_send_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter) // 엔터가 눌리면
+                Send(); // 메시지 전송
         }
 
         // 콜백 함수
@@ -810,11 +839,11 @@ namespace Yutnori
                 btn_Client.Text = "입장";
             }));*/
         }
-        
-        private void txt_send_KeyDown(object sender, KeyEventArgs e)
+
+        private void rtb_chat_TextChanged(object sender, EventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
-                Send();
+            rtb_chat.SelectionStart = rtb_chat.Text.Length;
+            rtb_chat.ScrollToCaret();
         }
     }
 }
