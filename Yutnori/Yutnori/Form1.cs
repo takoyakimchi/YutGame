@@ -616,203 +616,99 @@ namespace Yutnori
         }
 
         public void ServerStart()
-        {/*
-            int port;
-            if (!int.TryParse(txt_port.Text, out port))
-            {
-                lbl_loginAlert.ForeColor = Color.Red;
-                lbl_loginAlert.Text = "잘못된 PORT입니다.";
-
-                txt_port.Focus();
-                txt_port.SelectAll();
-                return;
-            }
-            if(txt_nickname.Text == "")
-            {
-                lbl_loginAlert.ForeColor = Color.Red;
-                lbl_loginAlert.Text = "닉네임을 입력하십시오.";
-
-                txt_nickname.Focus();
-                txt_nickname.SelectAll();
-                return;
-            }
-
-            //컨트롤 변형
-            lbl_loginAlert.ForeColor = Color.Black;
-            lbl_loginAlert.Text = "생성중...";
-
-            txt_ip.ReadOnly = true;
-            txt_port.ReadOnly = true;
-            txt_nickname.ReadOnly = true;
-            btn_Host.Enabled = false;
-            btn_Client.Enabled = false;
-
-            // 서버에서 클라이언트의 연결 요청을 대기하기 위해
-            // 소켓을 열어둔다.
-            IPEndPoint serverEP = new IPEndPoint(IPAddress.Any, port);
-            mainSock.Bind(serverEP);
-            mainSock.Listen(5);
-
-            is_server_on = true;
-
-            //게임인터페이스로 이동
-            pnl_login.Visible = false;
-
-            phase = PHASE.LOBBY;
-            pb_chat.Image = img_pNumber.Images[0];
-            pb_human1.Image = img_pHuman.Images[0];
-            txt_send.Enabled = true;
-            btn_send.Enabled = true;
-            btn_ready.Enabled = true;
-            Message("<System>" + txt_nickname.Text + "(" + 1 + "P)님이 입장하였습니다.");
-       */
+        {
         }
 
         public void ServerStop()
-        {/*
-            if (!is_server_on)
-                return;
-
-            //m_listener.Stop();  //서버 소켓 작동 중지
-
-
-
-            if (m_ThReader != null) m_ThReader.Abort(); //서버 소켓 스레드 종료
-            if (m_thServer != null) m_thServer.Abort(); //스레드 종료
-
-            //Message("서비스 종료");
-
-            this.Invoke(new MethodInvoker(delegate ()
-            {
-                lbl_loginAlert.Text = "";
-
-                txt_ip.ReadOnly = false;
-                txt_port.ReadOnly = false;
-                txt_nickname.ReadOnly = false;
-                btn_Host.Enabled = true;
-                btn_Client.Enabled = true;
-            }));*/
+        {
         }
 
         public void Connect()
-        {/*
-            if (mainSock.Connected)
-            {
-                this.Invoke(new MethodInvoker(delegate ()
-                {
-                    lbl_loginAlert.ForeColor = Color.Red;
-                    lbl_loginAlert.Text = "이미 연결되어 있습니다!";
-                }));
-                return;
-            }
-
-            int port;
-            if (!int.TryParse(txt_port.Text, out port))
-            {
-                this.Invoke(new MethodInvoker(delegate ()
-                {
-                    lbl_loginAlert.ForeColor = Color.Red;
-                    lbl_loginAlert.Text = "잘못된 PORT입니다.";
-
-                    txt_port.Focus();
-                    txt_port.SelectAll();
-                }));
-                return;
-            }
-            if (txt_nickname.Text == "")
-            {
-                this.Invoke(new MethodInvoker(delegate ()
-                {
-                    lbl_loginAlert.ForeColor = Color.Red;
-                    lbl_loginAlert.Text = "닉네임을 입력하십시오.";
-
-                    txt_nickname.Focus();
-                    txt_nickname.SelectAll();
-                }));
-                return;
-            }
-
-            this.Invoke(new MethodInvoker(delegate ()
-            {
-                lbl_loginAlert.ForeColor = Color.Black;
-                lbl_loginAlert.Text = "호스트에 연결시도중...";
-
-                txt_ip.ReadOnly = true;
-                txt_port.ReadOnly = true;
-                txt_nickname.ReadOnly = true;
-                btn_Host.Enabled = false;
-
-                btn_Client.Enabled = false;
-                //btn_Client.Text = "취소";
-            }));
-
-            try { mainSock.Connect(txt_ip.Text, port); }
-            catch (Exception)
-            {
-                this.Invoke(new MethodInvoker(delegate ()
-                {
-                    lbl_loginAlert.ForeColor = Color.Red;
-                    lbl_loginAlert.Text = "연결에 실패하였습니다!";
-
-                    txt_ip.ReadOnly = false;
-                    txt_port.ReadOnly = false;
-                    txt_nickname.ReadOnly = false;
-                    btn_Host.Enabled = true;
-
-                    btn_Client.Enabled = true;
-                    //btn_Client.Text = "입장";
-                }));
-                return;
-            }
-            
-            // 연결 완료되었다는 메세지를 띄워준다.
-            AppendText(txtHistory, "서버와 연결되었습니다.");
-
-            // 연결 완료, 서버에서 데이터가 올 수 있으므로 수신 대기한다.
-            AsyncObject obj = new AsyncObject(4096);
-            obj.WorkingSocket = mainSock;
-            mainSock.BeginReceive(obj.Buffer, 0, obj.BufferSize, 0, DataReceived, obj);
-            //-----------
-            m_Client = new TcpClient();
-            try
-            {
-                //포트입력 예외처리
-                int PORT = int.Parse(txt_port.Text);
-                m_Client.Connect(txt_ip.Text, int.Parse(txt_port.Text));
-            }
-            catch
-            {
-                lbl_loginAlert.ForeColor = Color.Red;
-                lbl_loginAlert.Text = "잘못된 IP 혹은 PORT입니다.";
-                is_connected = false;
-                return;
-            }
-            is_connected = true;
-
-            
-
-            m_Stream = m_Client.GetStream();
-
-            m_Read = new StreamReader(m_Stream);
-            m_Write = new StreamWriter(m_Stream);
-            */
+        {
         }
 
         public void Disconnect()
         {
-            /*if (mainSock.Connected) mainSock.Disconnect(true);
+           
+        }
 
-            if (m_thClient != null) m_thClient.Abort(); //스레드 종료
-            this.Invoke(new MethodInvoker(delegate ()
+        private void btn_help_Click(object sender, EventArgs e)
+        {
+            Form2 child = new Form2();
+            child.Show();
+        }
+        
+        int yutsang = 0 ; //윷의 상태를 나타냄
+        
+        private void btn_Roll_Click(object sender, EventArgs e)
+        {
+           
+            Random rand = new Random();
+            int number = rand.Next(1000);
+            if (120<=number&& number < 250) // 도 1
             {
-                lbl_loginAlert.Text = "";
+                if(120<=number && number <152.5)
+                    pb_yut1.Image = Properties.Resources.yut_back0;
+                else if(152.5<=number && number<185)
+                    pb_yut2.Image = Properties.Resources.yut_back0;
+                else if (185 <= number && number < 217.5)
+                    pb_yut3.Image = Properties.Resources.yut_back0;
+                else if (217.5 <= number && number < 250)
+                    pb_yut4.Image = Properties.Resources.yut_back0;
 
-                txt_ip.ReadOnly = false;
-                txt_port.ReadOnly = false;
-                txt_nickname.ReadOnly = false;
-                btn_Host.Enabled = true;
-                btn_Client.Text = "입장";
-            }));*/
+                yutsang = 1;
+            }
+            else if (0 <= number && number < 62) // 빽도 -1
+            {
+                if (0 <= number && number < 15)
+                    pb_yut1.Image = Properties.Resources.yut_back1;
+                else if (15 <=number && number < 30)
+                    pb_yut2.Image = Properties.Resources.yut_back1;
+                else if (30<= number && number < 45)
+                    pb_yut3.Image = Properties.Resources.yut_back1;
+                else if (45<= number && number <62)
+                    pb_yut4.Image = Properties.Resources.yut_back1;
+
+                yutsang = -1;
+            }
+            else if(62<=number && number <120) // 빨빽 -2
+            {
+                if (62 <= number && number < 75)
+                    pb_yut1.Image = Properties.Resources.yut_back2;
+                else if (75 <= number && number < 90)
+                    pb_yut2.Image = Properties.Resources.yut_back2;
+                else if (90 <= number && number < 105)
+                    pb_yut3.Image = Properties.Resources.yut_back2;
+                else if (105 <= number && number < 120)
+                    pb_yut4.Image = Properties.Resources.yut_back2;
+                yutsang = -2;
+            }
+            else if(312<=number && number< 625) // 개 2
+            {
+                yutsang = 2;
+            }
+            else if(250<=number && number<312) //두개빽 -3
+            {
+                yutsang = -3;
+            }
+            else if(625 <= number && number < 875) // 걸 3
+            {
+                yutsang = 3;
+            } else if(875 <= number && number < 940) // 윷 4
+            {
+                yutsang = 4;
+            }
+            else if(940<=number)//모 5
+            {
+                yutsang = 5;
+            }
+            
+            //MessageBox.Show(yutsang.ToString());
+        }
+
+        private void pb_yut1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
