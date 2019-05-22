@@ -15,7 +15,6 @@
  * 가끔 입력 형식이 이상하다고 에러뜸. -> 아직 무슨 에러인지 확인을 못함
  */
 
- //테스트
 using System;
 using System.Drawing;
 using System.IO;
@@ -59,6 +58,25 @@ namespace Yutnori
             MYTURN,     //당신의 턴
             NOT_MYTURN, //상대의 턴
             END_GAME    //게임종료
+        }
+
+        //게임 페이즈변경 함수
+        void changePhase(PHASE new_phase)
+        {
+            if(new_phase == PHASE.LOGIN)
+            {
+
+            }else if (new_phase == PHASE.LOBBY)
+            {
+
+            }else if (new_phase == PHASE.MYTURN)
+            {
+
+            }else if (new_phase == PHASE.NOT_MYTURN)
+            {
+
+            }else if (new_phase == PHASE.LOGIN)
+                phase = new_phase;
         }
 
         // 보조 기능 함수
