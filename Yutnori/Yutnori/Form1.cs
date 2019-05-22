@@ -668,11 +668,5 @@ namespace Yutnori
                 obj.WorkingSocket.BeginReceive(obj.Buffer, 0, 4096, 0, DataReceived, obj);
             }
         }
-        
-        private void txt_send_KeyDown(object sender, KeyEventArgs e)
-        {
-            rtb_chat.SelectionStart = rtb_chat.Text.Length;
-            rtb_chat.ScrollToCaret();
-        }
     }
 }
