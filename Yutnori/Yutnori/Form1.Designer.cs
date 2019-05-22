@@ -147,21 +147,21 @@
             this.pnl_top.Controls.Add(this.pb_chat);
             this.pnl_top.Controls.Add(this.btn_send);
             this.pnl_top.Controls.Add(this.txt_send);
-            this.pnl_top.Location = new System.Drawing.Point(510, 10);
+            this.pnl_top.Location = new System.Drawing.Point(638, 12);
             this.pnl_top.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_top.Name = "pnl_top";
-            this.pnl_top.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pnl_top.Size = new System.Drawing.Size(263, 192);
+            this.pnl_top.Padding = new System.Windows.Forms.Padding(5);
+            this.pnl_top.Size = new System.Drawing.Size(328, 230);
             this.pnl_top.TabIndex = 5;
             // 
             // rtb_chat
             // 
             this.rtb_chat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rtb_chat.Location = new System.Drawing.Point(6, 7);
+            this.rtb_chat.Location = new System.Drawing.Point(8, 8);
             this.rtb_chat.Margin = new System.Windows.Forms.Padding(2);
             this.rtb_chat.Name = "rtb_chat";
             this.rtb_chat.ReadOnly = true;
-            this.rtb_chat.Size = new System.Drawing.Size(250, 151);
+            this.rtb_chat.Size = new System.Drawing.Size(312, 180);
             this.rtb_chat.TabIndex = 10;
             this.rtb_chat.TabStop = false;
             this.rtb_chat.Text = "";
@@ -170,7 +170,7 @@
             // 
             this.pb_chat.BackColor = System.Drawing.Color.Transparent;
             this.pb_chat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pb_chat.Location = new System.Drawing.Point(6, 162);
+            this.pb_chat.Location = new System.Drawing.Point(8, 194);
             this.pb_chat.Margin = new System.Windows.Forms.Padding(2);
             this.pb_chat.Name = "pb_chat";
             this.pb_chat.Size = new System.Drawing.Size(35, 23);
@@ -181,7 +181,7 @@
             // btn_send
             // 
             this.btn_send.Enabled = false;
-            this.btn_send.Location = new System.Drawing.Point(200, 162);
+            this.btn_send.Location = new System.Drawing.Point(250, 194);
             this.btn_send.Margin = new System.Windows.Forms.Padding(2);
             this.btn_send.Name = "btn_send";
             this.btn_send.Size = new System.Drawing.Size(56, 23);
@@ -194,11 +194,12 @@
             // 
             this.txt_send.BackColor = System.Drawing.SystemColors.Window;
             this.txt_send.Enabled = false;
-            this.txt_send.Location = new System.Drawing.Point(46, 162);
+            this.txt_send.Location = new System.Drawing.Point(58, 194);
             this.txt_send.Margin = new System.Windows.Forms.Padding(2);
             this.txt_send.Name = "txt_send";
-            this.txt_send.Size = new System.Drawing.Size(150, 25);
+            this.txt_send.Size = new System.Drawing.Size(186, 28);
             this.txt_send.TabIndex = 5;
+            this.txt_send.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_send_KeyDown);
             // 
             // pnl_game
             // 
@@ -235,7 +236,7 @@
             this.pnl_game.Controls.Add(this.Step_10);
             this.pnl_game.Controls.Add(this.Step_0);
             this.pnl_game.Controls.Add(this.Step_5);
-            this.pnl_game.Location = new System.Drawing.Point(10, 10);
+            this.pnl_game.Location = new System.Drawing.Point(12, 12);
             this.pnl_game.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_game.Name = "pnl_game";
             this.pnl_game.Size = new System.Drawing.Size(496, 433);
@@ -255,30 +256,30 @@
             this.pnl_login.Controls.Add(this.lbl_ip);
             this.pnl_login.Controls.Add(this.btn_Client);
             this.pnl_login.Controls.Add(this.btn_Host);
-            this.pnl_login.Location = new System.Drawing.Point(103, 152);
+            this.pnl_login.Location = new System.Drawing.Point(129, 182);
             this.pnl_login.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_login.Name = "pnl_login";
-            this.pnl_login.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pnl_login.Size = new System.Drawing.Size(291, 131);
+            this.pnl_login.Padding = new System.Windows.Forms.Padding(5);
+            this.pnl_login.Size = new System.Drawing.Size(363, 157);
             this.pnl_login.TabIndex = 8;
             // 
             // lbl_loginAlert
             // 
             this.lbl_loginAlert.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lbl_loginAlert.Location = new System.Drawing.Point(4, 110);
+            this.lbl_loginAlert.Location = new System.Drawing.Point(5, 132);
             this.lbl_loginAlert.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_loginAlert.Name = "lbl_loginAlert";
-            this.lbl_loginAlert.Size = new System.Drawing.Size(281, 15);
+            this.lbl_loginAlert.Size = new System.Drawing.Size(351, 18);
             this.lbl_loginAlert.TabIndex = 9;
             this.lbl_loginAlert.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_port
             // 
             this.txt_port.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_port.Location = new System.Drawing.Point(220, 23);
+            this.txt_port.Location = new System.Drawing.Point(275, 28);
             this.txt_port.Margin = new System.Windows.Forms.Padding(2);
             this.txt_port.Name = "txt_port";
-            this.txt_port.Size = new System.Drawing.Size(58, 25);
+            this.txt_port.Size = new System.Drawing.Size(72, 28);
             this.txt_port.TabIndex = 1;
             // 
             // ip_port
@@ -286,7 +287,7 @@
             this.ip_port.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ip_port.AutoSize = true;
             this.ip_port.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.ip_port.Location = new System.Drawing.Point(167, 27);
+            this.ip_port.Location = new System.Drawing.Point(209, 32);
             this.ip_port.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ip_port.Name = "ip_port";
             this.ip_port.Size = new System.Drawing.Size(49, 17);
@@ -296,7 +297,7 @@
             // txt_nickname
             // 
             this.txt_nickname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_nickname.Location = new System.Drawing.Point(116, 53);
+            this.txt_nickname.Location = new System.Drawing.Point(145, 64);
             this.txt_nickname.Margin = new System.Windows.Forms.Padding(2);
             this.txt_nickname.MaxLength = 4;
             this.txt_nickname.Name = "txt_nickname";
@@ -306,10 +307,10 @@
             // txt_ip
             // 
             this.txt_ip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_ip.Location = new System.Drawing.Point(41, 23);
+            this.txt_ip.Location = new System.Drawing.Point(51, 28);
             this.txt_ip.Margin = new System.Windows.Forms.Padding(2);
             this.txt_ip.Name = "txt_ip";
-            this.txt_ip.Size = new System.Drawing.Size(122, 25);
+            this.txt_ip.Size = new System.Drawing.Size(152, 28);
             this.txt_ip.TabIndex = 0;
             // 
             // lbl_nickname
@@ -317,7 +318,7 @@
             this.lbl_nickname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_nickname.AutoSize = true;
             this.lbl_nickname.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbl_nickname.Location = new System.Drawing.Point(56, 56);
+            this.lbl_nickname.Location = new System.Drawing.Point(70, 67);
             this.lbl_nickname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_nickname.Name = "lbl_nickname";
             this.lbl_nickname.Size = new System.Drawing.Size(59, 17);
@@ -329,7 +330,7 @@
             this.lbl_ip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_ip.AutoSize = true;
             this.lbl_ip.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbl_ip.Location = new System.Drawing.Point(17, 27);
+            this.lbl_ip.Location = new System.Drawing.Point(21, 32);
             this.lbl_ip.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_ip.Name = "lbl_ip";
             this.lbl_ip.Size = new System.Drawing.Size(21, 17);
@@ -340,10 +341,10 @@
             // 
             this.btn_Client.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_Client.Font = new System.Drawing.Font("굴림", 10F);
-            this.btn_Client.Location = new System.Drawing.Point(153, 82);
+            this.btn_Client.Location = new System.Drawing.Point(191, 98);
             this.btn_Client.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Client.Name = "btn_Client";
-            this.btn_Client.Size = new System.Drawing.Size(90, 27);
+            this.btn_Client.Size = new System.Drawing.Size(112, 32);
             this.btn_Client.TabIndex = 4;
             this.btn_Client.Text = "입장";
             this.btn_Client.UseVisualStyleBackColor = true;
@@ -353,10 +354,10 @@
             // 
             this.btn_Host.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_Host.Font = new System.Drawing.Font("굴림", 10F);
-            this.btn_Host.Location = new System.Drawing.Point(58, 81);
+            this.btn_Host.Location = new System.Drawing.Point(72, 97);
             this.btn_Host.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Host.Name = "btn_Host";
-            this.btn_Host.Size = new System.Drawing.Size(90, 27);
+            this.btn_Host.Size = new System.Drawing.Size(112, 32);
             this.btn_Host.TabIndex = 3;
             this.btn_Host.Text = "생성";
             this.btn_Host.UseVisualStyleBackColor = true;
@@ -365,8 +366,7 @@
             // Step_16
             // 
             this.Step_16.Image = ((System.Drawing.Image)(resources.GetObject("Step_16.Image")));
-            this.Step_16.Location = new System.Drawing.Point(134, 359);
-            this.Step_16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_16.Location = new System.Drawing.Point(167, 431);
             this.Step_16.Name = "Step_16";
             this.Step_16.Size = new System.Drawing.Size(40, 42);
             this.Step_16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -376,8 +376,7 @@
             // Step_17
             // 
             this.Step_17.Image = ((System.Drawing.Image)(resources.GetObject("Step_17.Image")));
-            this.Step_17.Location = new System.Drawing.Point(196, 359);
-            this.Step_17.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_17.Location = new System.Drawing.Point(245, 431);
             this.Step_17.Name = "Step_17";
             this.Step_17.Size = new System.Drawing.Size(40, 42);
             this.Step_17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -398,8 +397,7 @@
             // Step_18
             // 
             this.Step_18.Image = ((System.Drawing.Image)(resources.GetObject("Step_18.Image")));
-            this.Step_18.Location = new System.Drawing.Point(259, 359);
-            this.Step_18.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_18.Location = new System.Drawing.Point(324, 431);
             this.Step_18.Name = "Step_18";
             this.Step_18.Size = new System.Drawing.Size(40, 42);
             this.Step_18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -409,8 +407,7 @@
             // Step_8
             // 
             this.Step_8.Image = ((System.Drawing.Image)(resources.GetObject("Step_8.Image")));
-            this.Step_8.Location = new System.Drawing.Point(196, 32);
-            this.Step_8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_8.Location = new System.Drawing.Point(245, 39);
             this.Step_8.Name = "Step_8";
             this.Step_8.Size = new System.Drawing.Size(40, 42);
             this.Step_8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -442,8 +439,7 @@
             // Step_215
             // 
             this.Step_215.Image = ((System.Drawing.Image)(resources.GetObject("Step_215.Image")));
-            this.Step_215.Location = new System.Drawing.Point(330, 302);
-            this.Step_215.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_215.Location = new System.Drawing.Point(412, 362);
             this.Step_215.Name = "Step_215";
             this.Step_215.Size = new System.Drawing.Size(40, 42);
             this.Step_215.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -453,8 +449,7 @@
             // Step_211
             // 
             this.Step_211.Image = ((System.Drawing.Image)(resources.GetObject("Step_211.Image")));
-            this.Step_211.Location = new System.Drawing.Point(126, 90);
-            this.Step_211.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_211.Location = new System.Drawing.Point(158, 108);
             this.Step_211.Name = "Step_211";
             this.Step_211.Size = new System.Drawing.Size(40, 42);
             this.Step_211.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -464,8 +459,7 @@
             // Step_212
             // 
             this.Step_212.Image = ((System.Drawing.Image)(resources.GetObject("Step_212.Image")));
-            this.Step_212.Location = new System.Drawing.Point(172, 138);
-            this.Step_212.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_212.Location = new System.Drawing.Point(215, 166);
             this.Step_212.Name = "Step_212";
             this.Step_212.Size = new System.Drawing.Size(40, 42);
             this.Step_212.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -486,8 +480,7 @@
             // Step_106
             // 
             this.Step_106.Image = ((System.Drawing.Image)(resources.GetObject("Step_106.Image")));
-            this.Step_106.Location = new System.Drawing.Point(330, 90);
-            this.Step_106.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_106.Location = new System.Drawing.Point(412, 108);
             this.Step_106.Name = "Step_106";
             this.Step_106.Size = new System.Drawing.Size(40, 42);
             this.Step_106.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -497,8 +490,7 @@
             // Step_109
             // 
             this.Step_109.Image = ((System.Drawing.Image)(resources.GetObject("Step_109.Image")));
-            this.Step_109.Location = new System.Drawing.Point(172, 253);
-            this.Step_109.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_109.Location = new System.Drawing.Point(215, 304);
             this.Step_109.Name = "Step_109";
             this.Step_109.Size = new System.Drawing.Size(40, 42);
             this.Step_109.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -508,8 +500,7 @@
             // Step_19
             // 
             this.Step_19.Image = ((System.Drawing.Image)(resources.GetObject("Step_19.Image")));
-            this.Step_19.Location = new System.Drawing.Point(322, 359);
-            this.Step_19.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_19.Location = new System.Drawing.Point(402, 431);
             this.Step_19.Name = "Step_19";
             this.Step_19.Size = new System.Drawing.Size(40, 42);
             this.Step_19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -519,8 +510,7 @@
             // Step_110
             // 
             this.Step_110.Image = ((System.Drawing.Image)(resources.GetObject("Step_110.Image")));
-            this.Step_110.Location = new System.Drawing.Point(126, 302);
-            this.Step_110.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_110.Location = new System.Drawing.Point(158, 362);
             this.Step_110.Name = "Step_110";
             this.Step_110.Size = new System.Drawing.Size(40, 42);
             this.Step_110.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -530,8 +520,7 @@
             // Step_6
             // 
             this.Step_6.Image = ((System.Drawing.Image)(resources.GetObject("Step_6.Image")));
-            this.Step_6.Location = new System.Drawing.Point(322, 32);
-            this.Step_6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_6.Location = new System.Drawing.Point(402, 39);
             this.Step_6.Name = "Step_6";
             this.Step_6.Size = new System.Drawing.Size(40, 42);
             this.Step_6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -563,8 +552,7 @@
             // Step_11
             // 
             this.Step_11.Image = ((System.Drawing.Image)(resources.GetObject("Step_11.Image")));
-            this.Step_11.Location = new System.Drawing.Point(70, 97);
-            this.Step_11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_11.Location = new System.Drawing.Point(88, 117);
             this.Step_11.Name = "Step_11";
             this.Step_11.Size = new System.Drawing.Size(40, 42);
             this.Step_11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -585,8 +573,7 @@
             // Step_12
             // 
             this.Step_12.Image = ((System.Drawing.Image)(resources.GetObject("Step_12.Image")));
-            this.Step_12.Location = new System.Drawing.Point(70, 163);
-            this.Step_12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_12.Location = new System.Drawing.Point(88, 196);
             this.Step_12.Name = "Step_12";
             this.Step_12.Size = new System.Drawing.Size(40, 42);
             this.Step_12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -596,8 +583,7 @@
             // Step_1
             // 
             this.Step_1.Image = ((System.Drawing.Image)(resources.GetObject("Step_1.Image")));
-            this.Step_1.Location = new System.Drawing.Point(385, 294);
-            this.Step_1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_1.Location = new System.Drawing.Point(481, 353);
             this.Step_1.Name = "Step_1";
             this.Step_1.Size = new System.Drawing.Size(40, 42);
             this.Step_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -607,8 +593,7 @@
             // Step_13
             // 
             this.Step_13.Image = ((System.Drawing.Image)(resources.GetObject("Step_13.Image")));
-            this.Step_13.Location = new System.Drawing.Point(70, 228);
-            this.Step_13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_13.Location = new System.Drawing.Point(88, 274);
             this.Step_13.Name = "Step_13";
             this.Step_13.Size = new System.Drawing.Size(40, 42);
             this.Step_13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -618,8 +603,7 @@
             // Step_14
             // 
             this.Step_14.Image = ((System.Drawing.Image)(resources.GetObject("Step_14.Image")));
-            this.Step_14.Location = new System.Drawing.Point(70, 294);
-            this.Step_14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Step_14.Location = new System.Drawing.Point(88, 353);
             this.Step_14.Name = "Step_14";
             this.Step_14.Size = new System.Drawing.Size(40, 42);
             this.Step_14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -696,16 +680,16 @@
             this.pnl_middle.Controls.Add(this.pb_human1);
             this.pnl_middle.Controls.Add(this.btn_ready);
             this.pnl_middle.Controls.Add(this.btn_help);
-            this.pnl_middle.Location = new System.Drawing.Point(510, 207);
+            this.pnl_middle.Location = new System.Drawing.Point(638, 248);
             this.pnl_middle.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_middle.Name = "pnl_middle";
-            this.pnl_middle.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pnl_middle.Size = new System.Drawing.Size(263, 84);
+            this.pnl_middle.Padding = new System.Windows.Forms.Padding(5);
+            this.pnl_middle.Size = new System.Drawing.Size(328, 100);
             this.pnl_middle.TabIndex = 7;
             // 
             // pb_human4
             // 
-            this.pb_human4.Location = new System.Drawing.Point(141, 7);
+            this.pb_human4.Location = new System.Drawing.Point(176, 8);
             this.pb_human4.Margin = new System.Windows.Forms.Padding(2);
             this.pb_human4.Name = "pb_human4";
             this.pb_human4.Size = new System.Drawing.Size(40, 70);
@@ -715,7 +699,7 @@
             // 
             // pb_human3
             // 
-            this.pb_human3.Location = new System.Drawing.Point(96, 7);
+            this.pb_human3.Location = new System.Drawing.Point(120, 8);
             this.pb_human3.Margin = new System.Windows.Forms.Padding(2);
             this.pb_human3.Name = "pb_human3";
             this.pb_human3.Size = new System.Drawing.Size(40, 70);
@@ -725,7 +709,7 @@
             // 
             // pb_human2
             // 
-            this.pb_human2.Location = new System.Drawing.Point(51, 7);
+            this.pb_human2.Location = new System.Drawing.Point(64, 8);
             this.pb_human2.Margin = new System.Windows.Forms.Padding(2);
             this.pb_human2.Name = "pb_human2";
             this.pb_human2.Size = new System.Drawing.Size(40, 70);
@@ -735,7 +719,7 @@
             // 
             // pb_human1
             // 
-            this.pb_human1.Location = new System.Drawing.Point(6, 7);
+            this.pb_human1.Location = new System.Drawing.Point(8, 8);
             this.pb_human1.Margin = new System.Windows.Forms.Padding(2);
             this.pb_human1.Name = "pb_human1";
             this.pb_human1.Size = new System.Drawing.Size(40, 70);
@@ -746,20 +730,20 @@
             // btn_ready
             // 
             this.btn_ready.Enabled = false;
-            this.btn_ready.Location = new System.Drawing.Point(190, 50);
+            this.btn_ready.Location = new System.Drawing.Point(238, 60);
             this.btn_ready.Margin = new System.Windows.Forms.Padding(2);
             this.btn_ready.Name = "btn_ready";
-            this.btn_ready.Size = new System.Drawing.Size(66, 27);
+            this.btn_ready.Size = new System.Drawing.Size(82, 32);
             this.btn_ready.TabIndex = 8;
             this.btn_ready.Text = "준비";
             this.btn_ready.UseVisualStyleBackColor = true;
             // 
             // btn_help
             // 
-            this.btn_help.Location = new System.Drawing.Point(190, 7);
+            this.btn_help.Location = new System.Drawing.Point(238, 8);
             this.btn_help.Margin = new System.Windows.Forms.Padding(2);
             this.btn_help.Name = "btn_help";
-            this.btn_help.Size = new System.Drawing.Size(66, 27);
+            this.btn_help.Size = new System.Drawing.Size(82, 32);
             this.btn_help.TabIndex = 7;
             this.btn_help.Text = "도움말";
             this.btn_help.UseVisualStyleBackColor = true;
@@ -774,19 +758,20 @@
             this.pnl_bottom.Controls.Add(this.pb_yut3);
             this.pnl_bottom.Controls.Add(this.pb_yut2);
             this.pnl_bottom.Controls.Add(this.pb_yut1);
-            this.pnl_bottom.Location = new System.Drawing.Point(510, 295);
+            this.pnl_bottom.Location = new System.Drawing.Point(638, 354);
             this.pnl_bottom.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_bottom.Name = "pnl_bottom";
-            this.pnl_bottom.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pnl_bottom.Size = new System.Drawing.Size(263, 149);
+            this.pnl_bottom.Padding = new System.Windows.Forms.Padding(5);
+            this.pnl_bottom.Size = new System.Drawing.Size(328, 178);
             this.pnl_bottom.TabIndex = 8;
             // 
             // btn_Roll
             // 
-            this.btn_Roll.Location = new System.Drawing.Point(103, 115);
+            this.btn_Roll.Enabled = false;
+            this.btn_Roll.Location = new System.Drawing.Point(129, 138);
             this.btn_Roll.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Roll.Name = "btn_Roll";
-            this.btn_Roll.Size = new System.Drawing.Size(66, 27);
+            this.btn_Roll.Size = new System.Drawing.Size(82, 32);
             this.btn_Roll.TabIndex = 9;
             this.btn_Roll.Text = "던지기";
             this.btn_Roll.UseVisualStyleBackColor = true;
@@ -795,8 +780,8 @@
             // pb_yut4
             // 
             this.pb_yut4.Image = ((System.Drawing.Image)(resources.GetObject("pb_yut4.Image")));
-            this.pb_yut4.Location = new System.Drawing.Point(190, 6);
-            this.pb_yut4.Margin = new System.Windows.Forms.Padding(8, 2, 8, 2);
+            this.pb_yut4.Location = new System.Drawing.Point(238, 7);
+            this.pb_yut4.Margin = new System.Windows.Forms.Padding(10, 2, 10, 2);
             this.pb_yut4.Name = "pb_yut4";
             this.pb_yut4.Size = new System.Drawing.Size(32, 100);
             this.pb_yut4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -806,8 +791,8 @@
             // pb_yut3
             // 
             this.pb_yut3.Image = ((System.Drawing.Image)(resources.GetObject("pb_yut3.Image")));
-            this.pb_yut3.Location = new System.Drawing.Point(142, 6);
-            this.pb_yut3.Margin = new System.Windows.Forms.Padding(8, 2, 8, 2);
+            this.pb_yut3.Location = new System.Drawing.Point(178, 7);
+            this.pb_yut3.Margin = new System.Windows.Forms.Padding(10, 2, 10, 2);
             this.pb_yut3.Name = "pb_yut3";
             this.pb_yut3.Size = new System.Drawing.Size(32, 100);
             this.pb_yut3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -817,8 +802,8 @@
             // pb_yut2
             // 
             this.pb_yut2.Image = ((System.Drawing.Image)(resources.GetObject("pb_yut2.Image")));
-            this.pb_yut2.Location = new System.Drawing.Point(94, 6);
-            this.pb_yut2.Margin = new System.Windows.Forms.Padding(8, 2, 8, 2);
+            this.pb_yut2.Location = new System.Drawing.Point(118, 7);
+            this.pb_yut2.Margin = new System.Windows.Forms.Padding(10, 2, 10, 2);
             this.pb_yut2.Name = "pb_yut2";
             this.pb_yut2.Size = new System.Drawing.Size(32, 100);
             this.pb_yut2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -827,9 +812,9 @@
             // 
             // pb_yut1
             // 
-            this.pb_yut1.Image = global::Yutnori.Properties.Resources.yut_front;
-            this.pb_yut1.Location = new System.Drawing.Point(46, 6);
-            this.pb_yut1.Margin = new System.Windows.Forms.Padding(8, 2, 8, 2);
+            this.pb_yut1.Image = ((System.Drawing.Image)(resources.GetObject("pb_yut1.Image")));
+            this.pb_yut1.Location = new System.Drawing.Point(58, 7);
+            this.pb_yut1.Margin = new System.Windows.Forms.Padding(10, 2, 10, 2);
             this.pb_yut1.Name = "pb_yut1";
             this.pb_yut1.Size = new System.Drawing.Size(32, 100);
             this.pb_yut1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -895,12 +880,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Yutnori.Properties.Resources.background;
-            this.ClientSize = new System.Drawing.Size(782, 453);
+            this.ClientSize = new System.Drawing.Size(978, 544);
             this.Controls.Add(this.pnl_top);
             this.Controls.Add(this.pnl_game);
             this.Controls.Add(this.pnl_middle);
             this.Controls.Add(this.pnl_bottom);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.Name = "Form1";
             this.Text = "Yutnori";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
