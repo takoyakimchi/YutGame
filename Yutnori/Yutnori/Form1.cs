@@ -849,15 +849,20 @@ namespace Yutnori
             }));*/
         }
 
+        // 채팅창의 내용이 변경 시 event handler
         private void rtb_chat_TextChanged(object sender, EventArgs e)
         {
+            // 스크롤을 자동적으로 맨 아래로 내린다.
             rtb_chat.SelectionStart = rtb_chat.Text.Length;
             rtb_chat.ScrollToCaret();
         }
 
+        // "준비" 버튼 클릭 event handler
         private void btn_ready_Click(object sender, EventArgs e)
         {
+            // 이미지 변경 부분
             switch(my_player_num) {
+                // 서버
                 case 1:
                     pb_human1.Image = img_pHuman.Images[1];
                     break;
