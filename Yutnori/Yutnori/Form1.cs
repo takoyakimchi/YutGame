@@ -88,12 +88,12 @@ namespace Yutnori
 
             // 보낼 닉네임
             string nickname = my_nickname;
-            if (string.IsNullOrEmpty(nickname))
-            {
-                MsgBoxHelper.Warn("닉네임을 입력하세요!");
-                txt_nickname.Focus();
-                return;
-            }
+            //if (string.IsNullOrEmpty(nickname))
+            //{
+            //    MsgBoxHelper.Warn("닉네임을 입력하세요!");
+            //    txt_nickname.Focus();
+            //    return;
+            //}
 
             // 문자열을 utf8 형식의 바이트로 변환한다.
             byte[] bDts = Encoding.UTF8.GetBytes(nickname);
@@ -152,7 +152,7 @@ namespace Yutnori
             client_socket.Receive(player_num_buffer);
 
             // 클라이언트에 서버로 부터 받은 플레이어 번호를 할당
-            my_player_num = Int32.Parse(Encoding.UTF8.GetString(player_num_buffer).Trim('\0'));
+            my_player_num = Int32.Parse(Encoding.UTF8.GetString(player_num_buffer).Trim('\0')); // error
         }
 
         // 폼 관련 함수
@@ -217,8 +217,11 @@ namespace Yutnori
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {// 폼이 닫힐 때
-            //ServerStop();   //서버 중지
-            //Disconnect();   //연결 중지
+
+            //if(!is_server)
+            //    ServerStop();  //서버 중지
+            //else
+            //    Disconnect();  //연결 중지
         }
         
         private void btn_Host_Click(object sender, EventArgs e)
@@ -285,6 +288,12 @@ namespace Yutnori
         {
             if (btn_Client.Text == "입장")
             {
+                if(txt_nickname.Text == "") {
+                    MsgBoxHelper.Error("닉네임을 입력하세요!");
+                    txt_nickname.Focus();
+                    return;
+                }
+
                 if (client_socket.Connected)
                 {
                     MsgBoxHelper.Error("이미 연결되어 있습니다!");
@@ -335,7 +344,7 @@ namespace Yutnori
                 SendNickname();
 
                 // 서버에게서 플레이어 번호를 할당받는다.
-                GetPlayerNum();
+                GetPlayerNum(); // error
 
                 //게임인터페이스로 이동
                 pnl_login.Visible = false;
@@ -543,7 +552,7 @@ namespace Yutnori
             AsyncObject obj = (AsyncObject)ar.AsyncState;
 
             // 데이터 수신을 끝낸다.
-            int received = obj.WorkingSocket.EndReceive(ar);
+            int received = obj.WorkingSocket.EndReceive(ar); // 클라 끄면 서버 꺼지는 이유
 
             // 받은 데이터가 없으면(연결 끊어짐) 끝낸다.
             if (received <= 0)
