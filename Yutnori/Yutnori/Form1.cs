@@ -17,6 +17,9 @@
  * 2019-05-22 구현계획
  * 혼자서라도 말을 움직일 수 있게 구현한 후, 여러 플레이어 구현
  * 준비 구현
+ * 
+ * ㅎㅇ
+ * ㅎㅇ
  */
 
 using System;
@@ -586,6 +589,19 @@ namespace Yutnori
 
             // 전송 완료 후 텍스트 박스에 추가한다.
             AppendText(rtb_chat, string.Format("<System>{0}({1}P)님이 입장하였습니다.", client_nickname, player_count));
+
+            // 픽처박스 바꾼다(add transparent image)
+            //switch(player_count) {
+            //    case 2:
+            //        pb_human2.Image = img_pHuman.Images[0];
+            //        break;
+            //    case 3:
+            //        pb_human3.Image = img_pHuman.Images[0];
+            //        break;
+            //    case 4:
+            //        pb_human4.Image = img_pHuman.Images[0];
+            //        break;
+            //}
 
             // 클라이언트의 데이터를 받는다.
             client.BeginReceive(obj.Buffer, 0, 4096, 0, DataReceived, obj);
