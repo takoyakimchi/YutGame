@@ -755,6 +755,7 @@
             this.btn_ready.TabIndex = 8;
             this.btn_ready.Text = "준비";
             this.btn_ready.UseVisualStyleBackColor = true;
+            this.btn_ready.Click += new System.EventHandler(this.btn_ready_Click);
             // 
             // btn_help
             // 

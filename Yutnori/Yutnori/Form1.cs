@@ -52,7 +52,7 @@ namespace Yutnori
         // 클라이언트 측 필드
         Socket client_socket;   // 클라이언트가 서버와 연결한 소켓
         string my_nickname = "Client";  // 클라이언트 자신의 닉네임
-        int my_player_num = -1;     // 클라이언트 자신의 플레이어 번호
+        int my_player_num = 1;     // 클라이언트 자신의 플레이어 번호
         
         PHASE phase = PHASE.LOGIN;           // 게임의 현재 페이즈
 
@@ -853,6 +853,24 @@ namespace Yutnori
         {
             rtb_chat.SelectionStart = rtb_chat.Text.Length;
             rtb_chat.ScrollToCaret();
+        }
+
+        private void btn_ready_Click(object sender, EventArgs e)
+        {
+            switch(my_player_num) {
+                case 1:
+                    pb_human1.Image = img_pHuman.Images[1];
+                    break;
+                case 2:
+                    pb_human2.Image = img_pHuman.Images[2];
+                    break;
+                case 3:
+                    pb_human3.Image = img_pHuman.Images[3];
+                    break;
+                case 4:
+                    pb_human4.Image = img_pHuman.Images[4];
+                    break;
+            }
         }
     }
 }
