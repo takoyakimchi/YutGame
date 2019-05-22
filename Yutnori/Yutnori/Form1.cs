@@ -372,6 +372,8 @@ namespace Yutnori
             }
         }
         
+
+
         private void btn_send_Click(object sender, EventArgs e)
         {// 데이터 전송 - 서버, 클라이언트 둘 다 사용
             if (is_server)  // 함수를 호출한 프로세스가 서버일 경우
@@ -388,7 +390,7 @@ namespace Yutnori
                 // 텍스트박스 예외처리
                 if (string.IsNullOrEmpty(tts))
                 {
-                    MsgBoxHelper.Warn("텍스트가 입력되지 않았습니다!");
+                    //MsgBoxHelper.Warn("텍스트가 입력되지 않았습니다!");
                     txt_send.Focus();
                     return;
                 }
@@ -437,7 +439,7 @@ namespace Yutnori
                 string tts = txt_send.Text.Trim();
                 if(string.IsNullOrEmpty(tts))
                 {
-                    MsgBoxHelper.Warn("텍스트가 입력되지 않았습니다!");
+                    //MsgBoxHelper.Warn("텍스트가 입력되지 않았습니다!");
                     txt_send.Focus();
                     return;
                 }
@@ -813,6 +815,12 @@ namespace Yutnori
                 btn_Host.Enabled = true;
                 btn_Client.Text = "입장";
             }));*/
+        }
+
+        private void btn_send_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+                btn_send_Click(sender, e);
         }
     }
 }
