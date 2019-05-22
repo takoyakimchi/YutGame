@@ -165,6 +165,7 @@
             this.rtb_chat.TabIndex = 10;
             this.rtb_chat.TabStop = false;
             this.rtb_chat.Text = "";
+            this.rtb_chat.TextChanged += new System.EventHandler(this.rtb_chat_TextChanged);
             // 
             // pb_chat
             // 
