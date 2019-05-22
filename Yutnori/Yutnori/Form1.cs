@@ -372,15 +372,12 @@ namespace Yutnori
             }
         }
         
-
-
-        private void btn_send_Click(object sender, EventArgs e)
-        {// 데이터 전송 - 서버, 클라이언트 둘 다 사용
-            if (is_server)  // 함수를 호출한 프로세스가 서버일 경우
+        void Send()
+        {
+            if(is_server)  // 함수를 호출한 프로세스가 서버일 경우
             {
                 // 서버가 대기 중인지 확인한다.
-                if(!server_socket.IsBound)
-                {
+                if(!server_socket.IsBound) {
                     MsgBoxHelper.Warn("서버가 실행되고 있지 않습니다!");
                     return;
                 }
@@ -388,8 +385,7 @@ namespace Yutnori
                 // 보낼 텍스트 지정
                 string tts = txt_send.Text.Trim();
                 // 텍스트박스 예외처리
-                if (string.IsNullOrEmpty(tts))
-                {
+                if(string.IsNullOrEmpty(tts)) {
                     //MsgBoxHelper.Warn("텍스트가 입력되지 않았습니다!");
                     txt_send.Focus();
                     return;
@@ -400,22 +396,17 @@ namespace Yutnori
                 byte[] bDts = Encoding.UTF8.GetBytes(server_nickname + '\x01' + tts + '\x01' + "1");
 
                 // 연결된 모든 클라이언트에게 전송한다.
-                foreach(string nickname in connected_clients.Keys)
-                {
+                foreach(string nickname in connected_clients.Keys) {
                     Socket socket = connected_clients[nickname];
-                    try
-                    {
+                    try {
                         socket.Send(bDts);
                     }
-                    catch
-                    {
+                    catch {
                         // 오류 발생하면 전송 취소하고 리스트에서 삭제한다.
-                        try
-                        {
+                        try {
                             socket.Dispose();
                         }
-                        catch
-                        {
+                        catch {
 
                         }
                         connected_clients.Remove(nickname);
@@ -429,21 +420,19 @@ namespace Yutnori
             else  // 함수를 호출한 프로세스가 클라이언트이면
             {
                 // 서버가 대기 중인지 확인한다.
-                if(!client_socket.IsBound)
-                {
+                if(!client_socket.IsBound) {
                     MsgBoxHelper.Warn("서버가 실행되고 있지 않습니다!");
                     return;
                 }
 
                 // 보낼 텍스트 지정
                 string tts = txt_send.Text.Trim();
-                if(string.IsNullOrEmpty(tts))
-                {
+                if(string.IsNullOrEmpty(tts)) {
                     //MsgBoxHelper.Warn("텍스트가 입력되지 않았습니다!");
                     txt_send.Focus();
                     return;
                 }
-                
+
                 // 클라이언트의 닉네임과 메세지를 전송한다.
                 // 문자열을 utf8 형식의 바이트로 변환한다. ('\x01'은 구분자)
                 byte[] bDts = Encoding.UTF8.GetBytes(my_nickname + '\x01' + tts + '\x01' + my_player_num.ToString());
@@ -452,9 +441,14 @@ namespace Yutnori
                 client_socket.Send(bDts);
 
                 // 전송 완료 후 텍스트 박스에 추가하고, 원래의 내용은 지운다.
-                AppendText(rtb_chat, string.Format("({0}P){1}: {2}", my_player_num ,my_nickname, tts));
+                AppendText(rtb_chat, string.Format("({0}P){1}: {2}", my_player_num, my_nickname, tts));
                 txt_send.Clear();
             }
+        }
+
+        private void btn_send_Click(object sender, EventArgs e)
+        {// 데이터 전송 - 서버, 클라이언트 둘 다 사용
+            Send();
         }
 
         // 콜백 함수
@@ -816,11 +810,11 @@ namespace Yutnori
                 btn_Client.Text = "입장";
             }));*/
         }
-
-        private void btn_send_KeyDown(object sender, KeyEventArgs e)
+        
+        private void txt_send_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
-                btn_send_Click(sender, e);
+                Send();
         }
     }
 }
