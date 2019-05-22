@@ -30,12 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.pnl_top = new System.Windows.Forms.Panel();
-            this.rtb_chat = new System.Windows.Forms.RichTextBox();
-            this.pb_chat = new System.Windows.Forms.PictureBox();
-            this.btn_send = new System.Windows.Forms.Button();
-            this.txt_send = new System.Windows.Forms.TextBox();
-            this.pnl_game = new System.Windows.Forms.Panel();
+            this.pnl_middle = new System.Windows.Forms.Panel();
+            this.pb_human4 = new System.Windows.Forms.PictureBox();
+            this.pb_human3 = new System.Windows.Forms.PictureBox();
+            this.pb_human2 = new System.Windows.Forms.PictureBox();
+            this.pb_human1 = new System.Windows.Forms.PictureBox();
+            this.btn_ready = new System.Windows.Forms.Button();
+            this.btn_help = new System.Windows.Forms.Button();
             this.pnl_login = new System.Windows.Forms.Panel();
             this.lbl_loginAlert = new System.Windows.Forms.Label();
             this.txt_port = new System.Windows.Forms.TextBox();
@@ -46,13 +47,23 @@
             this.lbl_ip = new System.Windows.Forms.Label();
             this.btn_Client = new System.Windows.Forms.Button();
             this.btn_Host = new System.Windows.Forms.Button();
+            this.pnl_bottom = new System.Windows.Forms.Panel();
+            this.btn_Roll = new System.Windows.Forms.Button();
+            this.pb_yut4 = new System.Windows.Forms.PictureBox();
+            this.pb_yut3 = new System.Windows.Forms.PictureBox();
+            this.pb_yut2 = new System.Windows.Forms.PictureBox();
+            this.pb_yut1 = new System.Windows.Forms.PictureBox();
             this.Step_16 = new System.Windows.Forms.PictureBox();
+            this.img_character = new System.Windows.Forms.ImageList(this.components);
+            this.img_SmallStep = new System.Windows.Forms.ImageList(this.components);
             this.Step_17 = new System.Windows.Forms.PictureBox();
             this.Step_9 = new System.Windows.Forms.PictureBox();
             this.Step_18 = new System.Windows.Forms.PictureBox();
             this.Step_8 = new System.Windows.Forms.PictureBox();
             this.Step_7 = new System.Windows.Forms.PictureBox();
             this.Step_107 = new System.Windows.Forms.PictureBox();
+            this.img_pHuman = new System.Windows.Forms.ImageList(this.components);
+            this.img_pNumber = new System.Windows.Forms.ImageList(this.components);
             this.Step_215 = new System.Windows.Forms.PictureBox();
             this.Step_211 = new System.Windows.Forms.PictureBox();
             this.Step_212 = new System.Windows.Forms.PictureBox();
@@ -61,7 +72,14 @@
             this.Step_109 = new System.Windows.Forms.PictureBox();
             this.Step_19 = new System.Windows.Forms.PictureBox();
             this.Step_110 = new System.Windows.Forms.PictureBox();
+            this.img_BigStep = new System.Windows.Forms.ImageList(this.components);
             this.Step_6 = new System.Windows.Forms.PictureBox();
+            this.pnl_top = new System.Windows.Forms.Panel();
+            this.rtb_chat = new System.Windows.Forms.RichTextBox();
+            this.pb_chat = new System.Windows.Forms.PictureBox();
+            this.btn_send = new System.Windows.Forms.Button();
+            this.txt_send = new System.Windows.Forms.TextBox();
+            this.pnl_game = new System.Windows.Forms.Panel();
             this.Step_4 = new System.Windows.Forms.PictureBox();
             this.Step_3 = new System.Windows.Forms.PictureBox();
             this.Step_11 = new System.Windows.Forms.PictureBox();
@@ -75,29 +93,18 @@
             this.Step_10 = new System.Windows.Forms.PictureBox();
             this.Step_0 = new System.Windows.Forms.PictureBox();
             this.Step_5 = new System.Windows.Forms.PictureBox();
-            this.pnl_middle = new System.Windows.Forms.Panel();
-            this.pb_human4 = new System.Windows.Forms.PictureBox();
-            this.pb_human3 = new System.Windows.Forms.PictureBox();
-            this.pb_human2 = new System.Windows.Forms.PictureBox();
-            this.pb_human1 = new System.Windows.Forms.PictureBox();
-            this.btn_ready = new System.Windows.Forms.Button();
-            this.btn_help = new System.Windows.Forms.Button();
-            this.pnl_bottom = new System.Windows.Forms.Panel();
-            this.btn_Roll = new System.Windows.Forms.Button();
-            this.pb_yut4 = new System.Windows.Forms.PictureBox();
-            this.pb_yut3 = new System.Windows.Forms.PictureBox();
-            this.pb_yut2 = new System.Windows.Forms.PictureBox();
-            this.pb_yut1 = new System.Windows.Forms.PictureBox();
-            this.img_pNumber = new System.Windows.Forms.ImageList(this.components);
-            this.img_pHuman = new System.Windows.Forms.ImageList(this.components);
-            this.img_BigStep = new System.Windows.Forms.ImageList(this.components);
-            this.img_SmallStep = new System.Windows.Forms.ImageList(this.components);
             this.img_yut = new System.Windows.Forms.ImageList(this.components);
-            this.img_character = new System.Windows.Forms.ImageList(this.components);
-            this.pnl_top.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_chat)).BeginInit();
-            this.pnl_game.SuspendLayout();
+            this.pnl_middle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_human4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_human3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_human2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_human1)).BeginInit();
             this.pnl_login.SuspendLayout();
+            this.pnl_bottom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_yut4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_yut3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_yut2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_yut1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Step_16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Step_17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Step_9)).BeginInit();
@@ -114,6 +121,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.Step_19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Step_110)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Step_6)).BeginInit();
+            this.pnl_top.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_chat)).BeginInit();
+            this.pnl_game.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Step_4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Step_3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Step_11)).BeginInit();
@@ -127,17 +137,482 @@
             ((System.ComponentModel.ISupportInitialize)(this.Step_10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Step_0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Step_5)).BeginInit();
-            this.pnl_middle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_human4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_human3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_human2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_human1)).BeginInit();
-            this.pnl_bottom.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_yut4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_yut3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_yut2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_yut1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pnl_middle
+            // 
+            this.pnl_middle.BackColor = System.Drawing.SystemColors.Info;
+            this.pnl_middle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnl_middle.Controls.Add(this.pb_human4);
+            this.pnl_middle.Controls.Add(this.pb_human3);
+            this.pnl_middle.Controls.Add(this.pb_human2);
+            this.pnl_middle.Controls.Add(this.pb_human1);
+            this.pnl_middle.Controls.Add(this.btn_ready);
+            this.pnl_middle.Controls.Add(this.btn_help);
+            this.pnl_middle.Location = new System.Drawing.Point(638, 248);
+            this.pnl_middle.Margin = new System.Windows.Forms.Padding(2);
+            this.pnl_middle.Name = "pnl_middle";
+            this.pnl_middle.Padding = new System.Windows.Forms.Padding(5);
+            this.pnl_middle.Size = new System.Drawing.Size(328, 100);
+            this.pnl_middle.TabIndex = 11;
+            // 
+            // pb_human4
+            // 
+            this.pb_human4.Location = new System.Drawing.Point(176, 8);
+            this.pb_human4.Margin = new System.Windows.Forms.Padding(2);
+            this.pb_human4.Name = "pb_human4";
+            this.pb_human4.Size = new System.Drawing.Size(50, 84);
+            this.pb_human4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_human4.TabIndex = 2;
+            this.pb_human4.TabStop = false;
+            // 
+            // pb_human3
+            // 
+            this.pb_human3.Location = new System.Drawing.Point(120, 8);
+            this.pb_human3.Margin = new System.Windows.Forms.Padding(2);
+            this.pb_human3.Name = "pb_human3";
+            this.pb_human3.Size = new System.Drawing.Size(50, 84);
+            this.pb_human3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_human3.TabIndex = 2;
+            this.pb_human3.TabStop = false;
+            // 
+            // pb_human2
+            // 
+            this.pb_human2.Location = new System.Drawing.Point(64, 8);
+            this.pb_human2.Margin = new System.Windows.Forms.Padding(2);
+            this.pb_human2.Name = "pb_human2";
+            this.pb_human2.Size = new System.Drawing.Size(50, 84);
+            this.pb_human2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_human2.TabIndex = 2;
+            this.pb_human2.TabStop = false;
+            // 
+            // pb_human1
+            // 
+            this.pb_human1.Location = new System.Drawing.Point(8, 8);
+            this.pb_human1.Margin = new System.Windows.Forms.Padding(2);
+            this.pb_human1.Name = "pb_human1";
+            this.pb_human1.Size = new System.Drawing.Size(50, 84);
+            this.pb_human1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_human1.TabIndex = 2;
+            this.pb_human1.TabStop = false;
+            // 
+            // btn_ready
+            // 
+            this.btn_ready.Enabled = false;
+            this.btn_ready.Location = new System.Drawing.Point(238, 60);
+            this.btn_ready.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_ready.Name = "btn_ready";
+            this.btn_ready.Size = new System.Drawing.Size(82, 32);
+            this.btn_ready.TabIndex = 8;
+            this.btn_ready.Text = "준비";
+            this.btn_ready.UseVisualStyleBackColor = true;
+            // 
+            // btn_help
+            // 
+            this.btn_help.Location = new System.Drawing.Point(238, 8);
+            this.btn_help.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_help.Name = "btn_help";
+            this.btn_help.Size = new System.Drawing.Size(82, 32);
+            this.btn_help.TabIndex = 7;
+            this.btn_help.Text = "도움말";
+            this.btn_help.UseVisualStyleBackColor = true;
+            this.btn_help.Click += new System.EventHandler(this.btn_help_Click);
+            // 
+            // pnl_login
+            // 
+            this.pnl_login.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnl_login.BackColor = System.Drawing.SystemColors.Info;
+            this.pnl_login.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_login.Controls.Add(this.lbl_loginAlert);
+            this.pnl_login.Controls.Add(this.txt_port);
+            this.pnl_login.Controls.Add(this.ip_port);
+            this.pnl_login.Controls.Add(this.txt_nickname);
+            this.pnl_login.Controls.Add(this.txt_ip);
+            this.pnl_login.Controls.Add(this.lbl_nickname);
+            this.pnl_login.Controls.Add(this.lbl_ip);
+            this.pnl_login.Controls.Add(this.btn_Client);
+            this.pnl_login.Controls.Add(this.btn_Host);
+            this.pnl_login.Location = new System.Drawing.Point(129, 182);
+            this.pnl_login.Margin = new System.Windows.Forms.Padding(2);
+            this.pnl_login.Name = "pnl_login";
+            this.pnl_login.Padding = new System.Windows.Forms.Padding(5);
+            this.pnl_login.Size = new System.Drawing.Size(363, 157);
+            this.pnl_login.TabIndex = 8;
+            // 
+            // lbl_loginAlert
+            // 
+            this.lbl_loginAlert.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lbl_loginAlert.Location = new System.Drawing.Point(5, 132);
+            this.lbl_loginAlert.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_loginAlert.Name = "lbl_loginAlert";
+            this.lbl_loginAlert.Size = new System.Drawing.Size(351, 18);
+            this.lbl_loginAlert.TabIndex = 9;
+            this.lbl_loginAlert.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txt_port
+            // 
+            this.txt_port.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txt_port.Location = new System.Drawing.Point(275, 28);
+            this.txt_port.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_port.Name = "txt_port";
+            this.txt_port.Size = new System.Drawing.Size(72, 28);
+            this.txt_port.TabIndex = 1;
+            // 
+            // ip_port
+            // 
+            this.ip_port.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ip_port.AutoSize = true;
+            this.ip_port.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.ip_port.Location = new System.Drawing.Point(209, 32);
+            this.ip_port.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ip_port.Name = "ip_port";
+            this.ip_port.Size = new System.Drawing.Size(60, 20);
+            this.ip_port.TabIndex = 2;
+            this.ip_port.Text = "PORT";
+            // 
+            // txt_nickname
+            // 
+            this.txt_nickname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txt_nickname.Location = new System.Drawing.Point(145, 64);
+            this.txt_nickname.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_nickname.MaxLength = 4;
+            this.txt_nickname.Name = "txt_nickname";
+            this.txt_nickname.Size = new System.Drawing.Size(158, 28);
+            this.txt_nickname.TabIndex = 2;
+            // 
+            // txt_ip
+            // 
+            this.txt_ip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txt_ip.Location = new System.Drawing.Point(51, 28);
+            this.txt_ip.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_ip.Name = "txt_ip";
+            this.txt_ip.Size = new System.Drawing.Size(152, 28);
+            this.txt_ip.TabIndex = 0;
+            // 
+            // lbl_nickname
+            // 
+            this.lbl_nickname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbl_nickname.AutoSize = true;
+            this.lbl_nickname.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbl_nickname.Location = new System.Drawing.Point(70, 67);
+            this.lbl_nickname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_nickname.Name = "lbl_nickname";
+            this.lbl_nickname.Size = new System.Drawing.Size(69, 20);
+            this.lbl_nickname.TabIndex = 2;
+            this.lbl_nickname.Text = "닉네임";
+            // 
+            // lbl_ip
+            // 
+            this.lbl_ip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbl_ip.AutoSize = true;
+            this.lbl_ip.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbl_ip.Location = new System.Drawing.Point(21, 32);
+            this.lbl_ip.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_ip.Name = "lbl_ip";
+            this.lbl_ip.Size = new System.Drawing.Size(24, 20);
+            this.lbl_ip.TabIndex = 2;
+            this.lbl_ip.Text = "IP";
+            // 
+            // btn_Client
+            // 
+            this.btn_Client.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_Client.Font = new System.Drawing.Font("굴림", 10F);
+            this.btn_Client.Location = new System.Drawing.Point(191, 98);
+            this.btn_Client.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Client.Name = "btn_Client";
+            this.btn_Client.Size = new System.Drawing.Size(112, 32);
+            this.btn_Client.TabIndex = 4;
+            this.btn_Client.Text = "입장";
+            this.btn_Client.UseVisualStyleBackColor = true;
+            this.btn_Client.Click += new System.EventHandler(this.btn_Client_Click);
+            // 
+            // btn_Host
+            // 
+            this.btn_Host.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_Host.Font = new System.Drawing.Font("굴림", 10F);
+            this.btn_Host.Location = new System.Drawing.Point(72, 97);
+            this.btn_Host.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Host.Name = "btn_Host";
+            this.btn_Host.Size = new System.Drawing.Size(112, 32);
+            this.btn_Host.TabIndex = 3;
+            this.btn_Host.Text = "생성";
+            this.btn_Host.UseVisualStyleBackColor = true;
+            this.btn_Host.Click += new System.EventHandler(this.btn_Host_Click);
+            // 
+            // pnl_bottom
+            // 
+            this.pnl_bottom.BackColor = System.Drawing.SystemColors.Info;
+            this.pnl_bottom.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnl_bottom.Controls.Add(this.btn_Roll);
+            this.pnl_bottom.Controls.Add(this.pb_yut4);
+            this.pnl_bottom.Controls.Add(this.pb_yut3);
+            this.pnl_bottom.Controls.Add(this.pb_yut2);
+            this.pnl_bottom.Controls.Add(this.pb_yut1);
+            this.pnl_bottom.Location = new System.Drawing.Point(638, 354);
+            this.pnl_bottom.Margin = new System.Windows.Forms.Padding(2);
+            this.pnl_bottom.Name = "pnl_bottom";
+            this.pnl_bottom.Padding = new System.Windows.Forms.Padding(5);
+            this.pnl_bottom.Size = new System.Drawing.Size(328, 178);
+            this.pnl_bottom.TabIndex = 12;
+            // 
+            // btn_Roll
+            // 
+            this.btn_Roll.Location = new System.Drawing.Point(129, 138);
+            this.btn_Roll.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Roll.Name = "btn_Roll";
+            this.btn_Roll.Size = new System.Drawing.Size(82, 32);
+            this.btn_Roll.TabIndex = 9;
+            this.btn_Roll.Text = "던지기";
+            this.btn_Roll.UseVisualStyleBackColor = true;
+            this.btn_Roll.Click += new System.EventHandler(this.btn_Roll_Click);
+            // 
+            // pb_yut4
+            // 
+            this.pb_yut4.Image = ((System.Drawing.Image)(resources.GetObject("pb_yut4.Image")));
+            this.pb_yut4.Location = new System.Drawing.Point(238, 7);
+            this.pb_yut4.Margin = new System.Windows.Forms.Padding(10, 2, 10, 2);
+            this.pb_yut4.Name = "pb_yut4";
+            this.pb_yut4.Size = new System.Drawing.Size(40, 120);
+            this.pb_yut4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_yut4.TabIndex = 2;
+            this.pb_yut4.TabStop = false;
+            // 
+            // pb_yut3
+            // 
+            this.pb_yut3.Image = ((System.Drawing.Image)(resources.GetObject("pb_yut3.Image")));
+            this.pb_yut3.Location = new System.Drawing.Point(178, 7);
+            this.pb_yut3.Margin = new System.Windows.Forms.Padding(10, 2, 10, 2);
+            this.pb_yut3.Name = "pb_yut3";
+            this.pb_yut3.Size = new System.Drawing.Size(40, 120);
+            this.pb_yut3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_yut3.TabIndex = 2;
+            this.pb_yut3.TabStop = false;
+            // 
+            // pb_yut2
+            // 
+            this.pb_yut2.Image = ((System.Drawing.Image)(resources.GetObject("pb_yut2.Image")));
+            this.pb_yut2.Location = new System.Drawing.Point(118, 7);
+            this.pb_yut2.Margin = new System.Windows.Forms.Padding(10, 2, 10, 2);
+            this.pb_yut2.Name = "pb_yut2";
+            this.pb_yut2.Size = new System.Drawing.Size(40, 120);
+            this.pb_yut2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_yut2.TabIndex = 2;
+            this.pb_yut2.TabStop = false;
+            // 
+            // pb_yut1
+            // 
+            this.pb_yut1.Image = ((System.Drawing.Image)(resources.GetObject("pb_yut1.Image")));
+            this.pb_yut1.Location = new System.Drawing.Point(58, 7);
+            this.pb_yut1.Margin = new System.Windows.Forms.Padding(10, 2, 10, 2);
+            this.pb_yut1.Name = "pb_yut1";
+            this.pb_yut1.Size = new System.Drawing.Size(40, 120);
+            this.pb_yut1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_yut1.TabIndex = 2;
+            this.pb_yut1.TabStop = false;
+            // 
+            // Step_16
+            // 
+            this.Step_16.Image = ((System.Drawing.Image)(resources.GetObject("Step_16.Image")));
+            this.Step_16.Location = new System.Drawing.Point(167, 431);
+            this.Step_16.Name = "Step_16";
+            this.Step_16.Size = new System.Drawing.Size(50, 50);
+            this.Step_16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Step_16.TabIndex = 1;
+            this.Step_16.TabStop = false;
+            // 
+            // img_character
+            // 
+            this.img_character.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("img_character.ImageStream")));
+            this.img_character.TransparentColor = System.Drawing.Color.Transparent;
+            this.img_character.Images.SetKeyName(0, "pawn_1P.png");
+            this.img_character.Images.SetKeyName(1, "pawn_2P.png");
+            this.img_character.Images.SetKeyName(2, "pawn_3P.png");
+            this.img_character.Images.SetKeyName(3, "pawn_4P.png");
+            // 
+            // img_SmallStep
+            // 
+            this.img_SmallStep.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("img_SmallStep.ImageStream")));
+            this.img_SmallStep.TransparentColor = System.Drawing.Color.Transparent;
+            this.img_SmallStep.Images.SetKeyName(0, "smallStep.png");
+            this.img_SmallStep.Images.SetKeyName(1, "keyStep.png");
+            // 
+            // Step_17
+            // 
+            this.Step_17.Image = ((System.Drawing.Image)(resources.GetObject("Step_17.Image")));
+            this.Step_17.Location = new System.Drawing.Point(245, 431);
+            this.Step_17.Name = "Step_17";
+            this.Step_17.Size = new System.Drawing.Size(50, 50);
+            this.Step_17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Step_17.TabIndex = 1;
+            this.Step_17.TabStop = false;
+            // 
+            // Step_9
+            // 
+            this.Step_9.Image = ((System.Drawing.Image)(resources.GetObject("Step_9.Image")));
+            this.Step_9.Location = new System.Drawing.Point(167, 39);
+            this.Step_9.Name = "Step_9";
+            this.Step_9.Size = new System.Drawing.Size(50, 50);
+            this.Step_9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Step_9.TabIndex = 1;
+            this.Step_9.TabStop = false;
+            // 
+            // Step_18
+            // 
+            this.Step_18.Image = ((System.Drawing.Image)(resources.GetObject("Step_18.Image")));
+            this.Step_18.Location = new System.Drawing.Point(324, 431);
+            this.Step_18.Name = "Step_18";
+            this.Step_18.Size = new System.Drawing.Size(50, 50);
+            this.Step_18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Step_18.TabIndex = 1;
+            this.Step_18.TabStop = false;
+            // 
+            // Step_8
+            // 
+            this.Step_8.Image = ((System.Drawing.Image)(resources.GetObject("Step_8.Image")));
+            this.Step_8.Location = new System.Drawing.Point(245, 39);
+            this.Step_8.Name = "Step_8";
+            this.Step_8.Size = new System.Drawing.Size(50, 50);
+            this.Step_8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Step_8.TabIndex = 1;
+            this.Step_8.TabStop = false;
+            // 
+            // Step_7
+            // 
+            this.Step_7.Image = ((System.Drawing.Image)(resources.GetObject("Step_7.Image")));
+            this.Step_7.Location = new System.Drawing.Point(324, 39);
+            this.Step_7.Name = "Step_7";
+            this.Step_7.Size = new System.Drawing.Size(50, 50);
+            this.Step_7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Step_7.TabIndex = 1;
+            this.Step_7.TabStop = false;
+            // 
+            // Step_107
+            // 
+            this.Step_107.Image = ((System.Drawing.Image)(resources.GetObject("Step_107.Image")));
+            this.Step_107.Location = new System.Drawing.Point(354, 166);
+            this.Step_107.Name = "Step_107";
+            this.Step_107.Size = new System.Drawing.Size(50, 50);
+            this.Step_107.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Step_107.TabIndex = 1;
+            this.Step_107.TabStop = false;
+            // 
+            // img_pHuman
+            // 
+            this.img_pHuman.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("img_pHuman.ImageStream")));
+            this.img_pHuman.TransparentColor = System.Drawing.Color.Transparent;
+            this.img_pHuman.Images.SetKeyName(0, "human_blank.png");
+            this.img_pHuman.Images.SetKeyName(1, "player1.png");
+            this.img_pHuman.Images.SetKeyName(2, "player2.png");
+            this.img_pHuman.Images.SetKeyName(3, "player3.png");
+            this.img_pHuman.Images.SetKeyName(4, "player4.png");
+            // 
+            // img_pNumber
+            // 
+            this.img_pNumber.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("img_pNumber.ImageStream")));
+            this.img_pNumber.TransparentColor = System.Drawing.Color.Transparent;
+            this.img_pNumber.Images.SetKeyName(0, "P1.png");
+            this.img_pNumber.Images.SetKeyName(1, "2P.png");
+            this.img_pNumber.Images.SetKeyName(2, "3P.png");
+            this.img_pNumber.Images.SetKeyName(3, "4P.png");
+            // 
+            // Step_215
+            // 
+            this.Step_215.Image = ((System.Drawing.Image)(resources.GetObject("Step_215.Image")));
+            this.Step_215.Location = new System.Drawing.Point(412, 362);
+            this.Step_215.Name = "Step_215";
+            this.Step_215.Size = new System.Drawing.Size(50, 50);
+            this.Step_215.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Step_215.TabIndex = 1;
+            this.Step_215.TabStop = false;
+            // 
+            // Step_211
+            // 
+            this.Step_211.Image = ((System.Drawing.Image)(resources.GetObject("Step_211.Image")));
+            this.Step_211.Location = new System.Drawing.Point(158, 108);
+            this.Step_211.Name = "Step_211";
+            this.Step_211.Size = new System.Drawing.Size(50, 50);
+            this.Step_211.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Step_211.TabIndex = 1;
+            this.Step_211.TabStop = false;
+            // 
+            // Step_212
+            // 
+            this.Step_212.Image = ((System.Drawing.Image)(resources.GetObject("Step_212.Image")));
+            this.Step_212.Location = new System.Drawing.Point(215, 166);
+            this.Step_212.Name = "Step_212";
+            this.Step_212.Size = new System.Drawing.Size(50, 50);
+            this.Step_212.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Step_212.TabIndex = 1;
+            this.Step_212.TabStop = false;
+            // 
+            // Step_214
+            // 
+            this.Step_214.Image = ((System.Drawing.Image)(resources.GetObject("Step_214.Image")));
+            this.Step_214.Location = new System.Drawing.Point(354, 304);
+            this.Step_214.Name = "Step_214";
+            this.Step_214.Size = new System.Drawing.Size(50, 50);
+            this.Step_214.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Step_214.TabIndex = 1;
+            this.Step_214.TabStop = false;
+            // 
+            // Step_106
+            // 
+            this.Step_106.Image = ((System.Drawing.Image)(resources.GetObject("Step_106.Image")));
+            this.Step_106.Location = new System.Drawing.Point(412, 108);
+            this.Step_106.Name = "Step_106";
+            this.Step_106.Size = new System.Drawing.Size(50, 50);
+            this.Step_106.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Step_106.TabIndex = 1;
+            this.Step_106.TabStop = false;
+            // 
+            // Step_109
+            // 
+            this.Step_109.Image = ((System.Drawing.Image)(resources.GetObject("Step_109.Image")));
+            this.Step_109.Location = new System.Drawing.Point(215, 304);
+            this.Step_109.Name = "Step_109";
+            this.Step_109.Size = new System.Drawing.Size(50, 50);
+            this.Step_109.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Step_109.TabIndex = 1;
+            this.Step_109.TabStop = false;
+            // 
+            // Step_19
+            // 
+            this.Step_19.Image = ((System.Drawing.Image)(resources.GetObject("Step_19.Image")));
+            this.Step_19.Location = new System.Drawing.Point(402, 431);
+            this.Step_19.Name = "Step_19";
+            this.Step_19.Size = new System.Drawing.Size(50, 50);
+            this.Step_19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Step_19.TabIndex = 1;
+            this.Step_19.TabStop = false;
+            // 
+            // Step_110
+            // 
+            this.Step_110.Image = ((System.Drawing.Image)(resources.GetObject("Step_110.Image")));
+            this.Step_110.Location = new System.Drawing.Point(158, 362);
+            this.Step_110.Name = "Step_110";
+            this.Step_110.Size = new System.Drawing.Size(50, 50);
+            this.Step_110.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Step_110.TabIndex = 1;
+            this.Step_110.TabStop = false;
+            // 
+            // img_BigStep
+            // 
+            this.img_BigStep.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("img_BigStep.ImageStream")));
+            this.img_BigStep.TransparentColor = System.Drawing.Color.Transparent;
+            this.img_BigStep.Images.SetKeyName(0, "BigStep.png");
+            this.img_BigStep.Images.SetKeyName(1, "goalStep.png");
+            this.img_BigStep.Images.SetKeyName(2, "islandStep.png");
+            this.img_BigStep.Images.SetKeyName(3, "BigkeyStep.png");
+            // 
+            // Step_6
+            // 
+            this.Step_6.Image = ((System.Drawing.Image)(resources.GetObject("Step_6.Image")));
+            this.Step_6.Location = new System.Drawing.Point(402, 39);
+            this.Step_6.Name = "Step_6";
+            this.Step_6.Size = new System.Drawing.Size(50, 50);
+            this.Step_6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Step_6.TabIndex = 1;
+            this.Step_6.TabStop = false;
             // 
             // pnl_top
             // 
@@ -147,21 +622,21 @@
             this.pnl_top.Controls.Add(this.pb_chat);
             this.pnl_top.Controls.Add(this.btn_send);
             this.pnl_top.Controls.Add(this.txt_send);
-            this.pnl_top.Location = new System.Drawing.Point(798, 14);
+            this.pnl_top.Location = new System.Drawing.Point(638, 12);
             this.pnl_top.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_top.Name = "pnl_top";
-            this.pnl_top.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.pnl_top.Size = new System.Drawing.Size(409, 275);
-            this.pnl_top.TabIndex = 5;
+            this.pnl_top.Padding = new System.Windows.Forms.Padding(5);
+            this.pnl_top.Size = new System.Drawing.Size(328, 230);
+            this.pnl_top.TabIndex = 9;
             // 
             // rtb_chat
             // 
             this.rtb_chat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rtb_chat.Location = new System.Drawing.Point(10, 10);
+            this.rtb_chat.Location = new System.Drawing.Point(8, 8);
             this.rtb_chat.Margin = new System.Windows.Forms.Padding(2);
             this.rtb_chat.Name = "rtb_chat";
             this.rtb_chat.ReadOnly = true;
-            this.rtb_chat.Size = new System.Drawing.Size(389, 215);
+            this.rtb_chat.Size = new System.Drawing.Size(312, 180);
             this.rtb_chat.TabIndex = 10;
             this.rtb_chat.TabStop = false;
             this.rtb_chat.Text = "";
@@ -170,7 +645,7 @@
             // 
             this.pb_chat.BackColor = System.Drawing.Color.Transparent;
             this.pb_chat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pb_chat.Location = new System.Drawing.Point(10, 233);
+            this.pb_chat.Location = new System.Drawing.Point(8, 194);
             this.pb_chat.Margin = new System.Windows.Forms.Padding(2);
             this.pb_chat.Name = "pb_chat";
             this.pb_chat.Size = new System.Drawing.Size(44, 28);
@@ -181,7 +656,7 @@
             // btn_send
             // 
             this.btn_send.Enabled = false;
-            this.btn_send.Location = new System.Drawing.Point(312, 233);
+            this.btn_send.Location = new System.Drawing.Point(250, 194);
             this.btn_send.Margin = new System.Windows.Forms.Padding(2);
             this.btn_send.Name = "btn_send";
             this.btn_send.Size = new System.Drawing.Size(70, 28);
@@ -194,10 +669,10 @@
             // 
             this.txt_send.BackColor = System.Drawing.SystemColors.Window;
             this.txt_send.Enabled = false;
-            this.txt_send.Location = new System.Drawing.Point(72, 233);
+            this.txt_send.Location = new System.Drawing.Point(58, 194);
             this.txt_send.Margin = new System.Windows.Forms.Padding(2);
             this.txt_send.Name = "txt_send";
-            this.txt_send.Size = new System.Drawing.Size(232, 28);
+            this.txt_send.Size = new System.Drawing.Size(186, 28);
             this.txt_send.TabIndex = 5;
             this.txt_send.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_send_KeyDown);
             // 
@@ -236,314 +711,16 @@
             this.pnl_game.Controls.Add(this.Step_10);
             this.pnl_game.Controls.Add(this.Step_0);
             this.pnl_game.Controls.Add(this.Step_5);
-            this.pnl_game.Location = new System.Drawing.Point(15, 14);
+            this.pnl_game.Location = new System.Drawing.Point(12, 12);
             this.pnl_game.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_game.Name = "pnl_game";
             this.pnl_game.Size = new System.Drawing.Size(620, 520);
-            this.pnl_game.TabIndex = 6;
-            // 
-            // pnl_login
-            // 
-            this.pnl_login.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnl_login.BackColor = System.Drawing.SystemColors.Info;
-            this.pnl_login.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl_login.Controls.Add(this.lbl_loginAlert);
-            this.pnl_login.Controls.Add(this.txt_port);
-            this.pnl_login.Controls.Add(this.ip_port);
-            this.pnl_login.Controls.Add(this.txt_nickname);
-            this.pnl_login.Controls.Add(this.txt_ip);
-            this.pnl_login.Controls.Add(this.lbl_nickname);
-            this.pnl_login.Controls.Add(this.lbl_ip);
-            this.pnl_login.Controls.Add(this.btn_Client);
-            this.pnl_login.Controls.Add(this.btn_Host);
-            this.pnl_login.Location = new System.Drawing.Point(161, 218);
-            this.pnl_login.Margin = new System.Windows.Forms.Padding(2);
-            this.pnl_login.Name = "pnl_login";
-            this.pnl_login.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.pnl_login.Size = new System.Drawing.Size(453, 188);
-            this.pnl_login.TabIndex = 8;
-            // 
-            // lbl_loginAlert
-            // 
-            this.lbl_loginAlert.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lbl_loginAlert.Location = new System.Drawing.Point(6, 158);
-            this.lbl_loginAlert.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_loginAlert.Name = "lbl_loginAlert";
-            this.lbl_loginAlert.Size = new System.Drawing.Size(439, 22);
-            this.lbl_loginAlert.TabIndex = 9;
-            this.lbl_loginAlert.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txt_port
-            // 
-            this.txt_port.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_port.Location = new System.Drawing.Point(344, 34);
-            this.txt_port.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_port.Name = "txt_port";
-            this.txt_port.Size = new System.Drawing.Size(89, 28);
-            this.txt_port.TabIndex = 1;
-            // 
-            // ip_port
-            // 
-            this.ip_port.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ip_port.AutoSize = true;
-            this.ip_port.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.ip_port.Location = new System.Drawing.Point(261, 38);
-            this.ip_port.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.ip_port.Name = "ip_port";
-            this.ip_port.Size = new System.Drawing.Size(60, 20);
-            this.ip_port.TabIndex = 2;
-            this.ip_port.Text = "PORT";
-            // 
-            // txt_nickname
-            // 
-            this.txt_nickname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_nickname.Location = new System.Drawing.Point(181, 77);
-            this.txt_nickname.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_nickname.MaxLength = 4;
-            this.txt_nickname.Name = "txt_nickname";
-            this.txt_nickname.Size = new System.Drawing.Size(158, 28);
-            this.txt_nickname.TabIndex = 2;
-            // 
-            // txt_ip
-            // 
-            this.txt_ip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_ip.Location = new System.Drawing.Point(64, 34);
-            this.txt_ip.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_ip.Name = "txt_ip";
-            this.txt_ip.Size = new System.Drawing.Size(189, 28);
-            this.txt_ip.TabIndex = 0;
-            // 
-            // lbl_nickname
-            // 
-            this.lbl_nickname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbl_nickname.AutoSize = true;
-            this.lbl_nickname.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbl_nickname.Location = new System.Drawing.Point(88, 80);
-            this.lbl_nickname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_nickname.Name = "lbl_nickname";
-            this.lbl_nickname.Size = new System.Drawing.Size(69, 20);
-            this.lbl_nickname.TabIndex = 2;
-            this.lbl_nickname.Text = "닉네임";
-            // 
-            // lbl_ip
-            // 
-            this.lbl_ip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbl_ip.AutoSize = true;
-            this.lbl_ip.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbl_ip.Location = new System.Drawing.Point(26, 38);
-            this.lbl_ip.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_ip.Name = "lbl_ip";
-            this.lbl_ip.Size = new System.Drawing.Size(24, 20);
-            this.lbl_ip.TabIndex = 2;
-            this.lbl_ip.Text = "IP";
-            // 
-            // btn_Client
-            // 
-            this.btn_Client.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_Client.Font = new System.Drawing.Font("굴림", 10F);
-            this.btn_Client.Location = new System.Drawing.Point(239, 118);
-            this.btn_Client.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_Client.Name = "btn_Client";
-            this.btn_Client.Size = new System.Drawing.Size(140, 38);
-            this.btn_Client.TabIndex = 4;
-            this.btn_Client.Text = "입장";
-            this.btn_Client.UseVisualStyleBackColor = true;
-            this.btn_Client.Click += new System.EventHandler(this.btn_Client_Click);
-            // 
-            // btn_Host
-            // 
-            this.btn_Host.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_Host.Font = new System.Drawing.Font("굴림", 10F);
-            this.btn_Host.Location = new System.Drawing.Point(90, 116);
-            this.btn_Host.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_Host.Name = "btn_Host";
-            this.btn_Host.Size = new System.Drawing.Size(140, 38);
-            this.btn_Host.TabIndex = 3;
-            this.btn_Host.Text = "생성";
-            this.btn_Host.UseVisualStyleBackColor = true;
-            this.btn_Host.Click += new System.EventHandler(this.btn_Host_Click);
-            // 
-            // Step_16
-            // 
-            this.Step_16.Image = ((System.Drawing.Image)(resources.GetObject("Step_16.Image")));
-            this.Step_16.Location = new System.Drawing.Point(209, 517);
-            this.Step_16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Step_16.Name = "Step_16";
-            this.Step_16.Size = new System.Drawing.Size(50, 50);
-            this.Step_16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Step_16.TabIndex = 1;
-            this.Step_16.TabStop = false;
-            // 
-            // Step_17
-            // 
-            this.Step_17.Image = ((System.Drawing.Image)(resources.GetObject("Step_17.Image")));
-            this.Step_17.Location = new System.Drawing.Point(306, 517);
-            this.Step_17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Step_17.Name = "Step_17";
-            this.Step_17.Size = new System.Drawing.Size(50, 50);
-            this.Step_17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Step_17.TabIndex = 1;
-            this.Step_17.TabStop = false;
-            // 
-            // Step_9
-            // 
-            this.Step_9.Image = ((System.Drawing.Image)(resources.GetObject("Step_9.Image")));
-            this.Step_9.Location = new System.Drawing.Point(168, 38);
-            this.Step_9.Margin = new System.Windows.Forms.Padding(2);
-            this.Step_9.Name = "Step_9";
-            this.Step_9.Size = new System.Drawing.Size(50, 50);
-            this.Step_9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Step_9.TabIndex = 1;
-            this.Step_9.TabStop = false;
-            // 
-            // Step_18
-            // 
-            this.Step_18.Image = ((System.Drawing.Image)(resources.GetObject("Step_18.Image")));
-            this.Step_18.Location = new System.Drawing.Point(405, 517);
-            this.Step_18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Step_18.Name = "Step_18";
-            this.Step_18.Size = new System.Drawing.Size(50, 50);
-            this.Step_18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Step_18.TabIndex = 1;
-            this.Step_18.TabStop = false;
-            // 
-            // Step_8
-            // 
-            this.Step_8.Image = ((System.Drawing.Image)(resources.GetObject("Step_8.Image")));
-            this.Step_8.Location = new System.Drawing.Point(306, 47);
-            this.Step_8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Step_8.Name = "Step_8";
-            this.Step_8.Size = new System.Drawing.Size(50, 50);
-            this.Step_8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Step_8.TabIndex = 1;
-            this.Step_8.TabStop = false;
-            // 
-            // Step_7
-            // 
-            this.Step_7.Image = ((System.Drawing.Image)(resources.GetObject("Step_7.Image")));
-            this.Step_7.Location = new System.Drawing.Point(324, 38);
-            this.Step_7.Margin = new System.Windows.Forms.Padding(2);
-            this.Step_7.Name = "Step_7";
-            this.Step_7.Size = new System.Drawing.Size(50, 50);
-            this.Step_7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Step_7.TabIndex = 1;
-            this.Step_7.TabStop = false;
-            // 
-            // Step_107
-            // 
-            this.Step_107.Image = ((System.Drawing.Image)(resources.GetObject("Step_107.Image")));
-            this.Step_107.Location = new System.Drawing.Point(354, 166);
-            this.Step_107.Margin = new System.Windows.Forms.Padding(2);
-            this.Step_107.Name = "Step_107";
-            this.Step_107.Size = new System.Drawing.Size(50, 50);
-            this.Step_107.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Step_107.TabIndex = 1;
-            this.Step_107.TabStop = false;
-            // 
-            // Step_215
-            // 
-            this.Step_215.Image = ((System.Drawing.Image)(resources.GetObject("Step_215.Image")));
-            this.Step_215.Location = new System.Drawing.Point(515, 434);
-            this.Step_215.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Step_215.Name = "Step_215";
-            this.Step_215.Size = new System.Drawing.Size(50, 50);
-            this.Step_215.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Step_215.TabIndex = 1;
-            this.Step_215.TabStop = false;
-            // 
-            // Step_211
-            // 
-            this.Step_211.Image = ((System.Drawing.Image)(resources.GetObject("Step_211.Image")));
-            this.Step_211.Location = new System.Drawing.Point(198, 130);
-            this.Step_211.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Step_211.Name = "Step_211";
-            this.Step_211.Size = new System.Drawing.Size(50, 50);
-            this.Step_211.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Step_211.TabIndex = 1;
-            this.Step_211.TabStop = false;
-            // 
-            // Step_212
-            // 
-            this.Step_212.Image = ((System.Drawing.Image)(resources.GetObject("Step_212.Image")));
-            this.Step_212.Location = new System.Drawing.Point(269, 199);
-            this.Step_212.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Step_212.Name = "Step_212";
-            this.Step_212.Size = new System.Drawing.Size(50, 50);
-            this.Step_212.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Step_212.TabIndex = 1;
-            this.Step_212.TabStop = false;
-            // 
-            // Step_214
-            // 
-            this.Step_214.Image = ((System.Drawing.Image)(resources.GetObject("Step_214.Image")));
-            this.Step_214.Location = new System.Drawing.Point(354, 304);
-            this.Step_214.Margin = new System.Windows.Forms.Padding(2);
-            this.Step_214.Name = "Step_214";
-            this.Step_214.Size = new System.Drawing.Size(50, 50);
-            this.Step_214.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Step_214.TabIndex = 1;
-            this.Step_214.TabStop = false;
-            // 
-            // Step_106
-            // 
-            this.Step_106.Image = ((System.Drawing.Image)(resources.GetObject("Step_106.Image")));
-            this.Step_106.Location = new System.Drawing.Point(515, 130);
-            this.Step_106.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Step_106.Name = "Step_106";
-            this.Step_106.Size = new System.Drawing.Size(50, 50);
-            this.Step_106.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Step_106.TabIndex = 1;
-            this.Step_106.TabStop = false;
-            // 
-            // Step_109
-            // 
-            this.Step_109.Image = ((System.Drawing.Image)(resources.GetObject("Step_109.Image")));
-            this.Step_109.Location = new System.Drawing.Point(269, 365);
-            this.Step_109.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Step_109.Name = "Step_109";
-            this.Step_109.Size = new System.Drawing.Size(50, 50);
-            this.Step_109.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Step_109.TabIndex = 1;
-            this.Step_109.TabStop = false;
-            // 
-            // Step_19
-            // 
-            this.Step_19.Image = ((System.Drawing.Image)(resources.GetObject("Step_19.Image")));
-            this.Step_19.Location = new System.Drawing.Point(502, 517);
-            this.Step_19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Step_19.Name = "Step_19";
-            this.Step_19.Size = new System.Drawing.Size(50, 50);
-            this.Step_19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Step_19.TabIndex = 1;
-            this.Step_19.TabStop = false;
-            // 
-            // Step_110
-            // 
-            this.Step_110.Image = ((System.Drawing.Image)(resources.GetObject("Step_110.Image")));
-            this.Step_110.Location = new System.Drawing.Point(198, 434);
-            this.Step_110.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Step_110.Name = "Step_110";
-            this.Step_110.Size = new System.Drawing.Size(50, 50);
-            this.Step_110.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Step_110.TabIndex = 1;
-            this.Step_110.TabStop = false;
-            // 
-            // Step_6
-            // 
-            this.Step_6.Image = ((System.Drawing.Image)(resources.GetObject("Step_6.Image")));
-            this.Step_6.Location = new System.Drawing.Point(502, 47);
-            this.Step_6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Step_6.Name = "Step_6";
-            this.Step_6.Size = new System.Drawing.Size(50, 50);
-            this.Step_6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Step_6.TabIndex = 1;
-            this.Step_6.TabStop = false;
+            this.pnl_game.TabIndex = 10;
             // 
             // Step_4
             // 
             this.Step_4.Image = ((System.Drawing.Image)(resources.GetObject("Step_4.Image")));
-            this.Step_4.Location = new System.Drawing.Point(481, 116);
-            this.Step_4.Margin = new System.Windows.Forms.Padding(2);
+            this.Step_4.Location = new System.Drawing.Point(481, 117);
             this.Step_4.Name = "Step_4";
             this.Step_4.Size = new System.Drawing.Size(50, 50);
             this.Step_4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -554,7 +731,6 @@
             // 
             this.Step_3.Image = ((System.Drawing.Image)(resources.GetObject("Step_3.Image")));
             this.Step_3.Location = new System.Drawing.Point(481, 196);
-            this.Step_3.Margin = new System.Windows.Forms.Padding(2);
             this.Step_3.Name = "Step_3";
             this.Step_3.Size = new System.Drawing.Size(50, 50);
             this.Step_3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -564,8 +740,7 @@
             // Step_11
             // 
             this.Step_11.Image = ((System.Drawing.Image)(resources.GetObject("Step_11.Image")));
-            this.Step_11.Location = new System.Drawing.Point(110, 140);
-            this.Step_11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Step_11.Location = new System.Drawing.Point(88, 117);
             this.Step_11.Name = "Step_11";
             this.Step_11.Size = new System.Drawing.Size(50, 50);
             this.Step_11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -576,7 +751,6 @@
             // 
             this.Step_2.Image = ((System.Drawing.Image)(resources.GetObject("Step_2.Image")));
             this.Step_2.Location = new System.Drawing.Point(481, 274);
-            this.Step_2.Margin = new System.Windows.Forms.Padding(2);
             this.Step_2.Name = "Step_2";
             this.Step_2.Size = new System.Drawing.Size(50, 50);
             this.Step_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -586,8 +760,7 @@
             // Step_12
             // 
             this.Step_12.Image = ((System.Drawing.Image)(resources.GetObject("Step_12.Image")));
-            this.Step_12.Location = new System.Drawing.Point(110, 235);
-            this.Step_12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Step_12.Location = new System.Drawing.Point(88, 196);
             this.Step_12.Name = "Step_12";
             this.Step_12.Size = new System.Drawing.Size(50, 50);
             this.Step_12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -597,8 +770,7 @@
             // Step_1
             // 
             this.Step_1.Image = ((System.Drawing.Image)(resources.GetObject("Step_1.Image")));
-            this.Step_1.Location = new System.Drawing.Point(601, 424);
-            this.Step_1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Step_1.Location = new System.Drawing.Point(481, 353);
             this.Step_1.Name = "Step_1";
             this.Step_1.Size = new System.Drawing.Size(50, 50);
             this.Step_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -608,8 +780,7 @@
             // Step_13
             // 
             this.Step_13.Image = ((System.Drawing.Image)(resources.GetObject("Step_13.Image")));
-            this.Step_13.Location = new System.Drawing.Point(110, 329);
-            this.Step_13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Step_13.Location = new System.Drawing.Point(88, 274);
             this.Step_13.Name = "Step_13";
             this.Step_13.Size = new System.Drawing.Size(50, 50);
             this.Step_13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -619,8 +790,7 @@
             // Step_14
             // 
             this.Step_14.Image = ((System.Drawing.Image)(resources.GetObject("Step_14.Image")));
-            this.Step_14.Location = new System.Drawing.Point(110, 424);
-            this.Step_14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Step_14.Location = new System.Drawing.Point(88, 353);
             this.Step_14.Name = "Step_14";
             this.Step_14.Size = new System.Drawing.Size(50, 50);
             this.Step_14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -631,8 +801,7 @@
             // 
             this.Step_15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Step_15.Image = ((System.Drawing.Image)(resources.GetObject("Step_15.Image")));
-            this.Step_15.Location = new System.Drawing.Point(72, 416);
-            this.Step_15.Margin = new System.Windows.Forms.Padding(2);
+            this.Step_15.Location = new System.Drawing.Point(73, 416);
             this.Step_15.Name = "Step_15";
             this.Step_15.Size = new System.Drawing.Size(80, 80);
             this.Step_15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -644,7 +813,6 @@
             this.Step_108.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Step_108.Image = ((System.Drawing.Image)(resources.GetObject("Step_108.Image")));
             this.Step_108.Location = new System.Drawing.Point(270, 220);
-            this.Step_108.Margin = new System.Windows.Forms.Padding(2);
             this.Step_108.Name = "Step_108";
             this.Step_108.Size = new System.Drawing.Size(80, 80);
             this.Step_108.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -655,8 +823,7 @@
             // 
             this.Step_10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Step_10.Image = ((System.Drawing.Image)(resources.GetObject("Step_10.Image")));
-            this.Step_10.Location = new System.Drawing.Point(72, 24);
-            this.Step_10.Margin = new System.Windows.Forms.Padding(2);
+            this.Step_10.Location = new System.Drawing.Point(73, 24);
             this.Step_10.Name = "Step_10";
             this.Step_10.Size = new System.Drawing.Size(80, 80);
             this.Step_10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -668,7 +835,6 @@
             this.Step_0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Step_0.Image = ((System.Drawing.Image)(resources.GetObject("Step_0.Image")));
             this.Step_0.Location = new System.Drawing.Point(466, 416);
-            this.Step_0.Margin = new System.Windows.Forms.Padding(2);
             this.Step_0.Name = "Step_0";
             this.Step_0.Size = new System.Drawing.Size(80, 80);
             this.Step_0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -680,196 +846,11 @@
             this.Step_5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Step_5.Image = ((System.Drawing.Image)(resources.GetObject("Step_5.Image")));
             this.Step_5.Location = new System.Drawing.Point(466, 24);
-            this.Step_5.Margin = new System.Windows.Forms.Padding(2);
             this.Step_5.Name = "Step_5";
             this.Step_5.Size = new System.Drawing.Size(80, 80);
             this.Step_5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Step_5.TabIndex = 0;
             this.Step_5.TabStop = false;
-            // 
-            // pnl_middle
-            // 
-            this.pnl_middle.BackColor = System.Drawing.SystemColors.Info;
-            this.pnl_middle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnl_middle.Controls.Add(this.pb_human4);
-            this.pnl_middle.Controls.Add(this.pb_human3);
-            this.pnl_middle.Controls.Add(this.pb_human2);
-            this.pnl_middle.Controls.Add(this.pb_human1);
-            this.pnl_middle.Controls.Add(this.btn_ready);
-            this.pnl_middle.Controls.Add(this.btn_help);
-            this.pnl_middle.Location = new System.Drawing.Point(798, 298);
-            this.pnl_middle.Margin = new System.Windows.Forms.Padding(2);
-            this.pnl_middle.Name = "pnl_middle";
-            this.pnl_middle.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.pnl_middle.Size = new System.Drawing.Size(409, 119);
-            this.pnl_middle.TabIndex = 7;
-            // 
-            // pb_human4
-            // 
-            this.pb_human4.Location = new System.Drawing.Point(220, 10);
-            this.pb_human4.Margin = new System.Windows.Forms.Padding(2);
-            this.pb_human4.Name = "pb_human4";
-            this.pb_human4.Size = new System.Drawing.Size(50, 84);
-            this.pb_human4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_human4.TabIndex = 2;
-            this.pb_human4.TabStop = false;
-            // 
-            // pb_human3
-            // 
-            this.pb_human3.Location = new System.Drawing.Point(150, 10);
-            this.pb_human3.Margin = new System.Windows.Forms.Padding(2);
-            this.pb_human3.Name = "pb_human3";
-            this.pb_human3.Size = new System.Drawing.Size(50, 84);
-            this.pb_human3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_human3.TabIndex = 2;
-            this.pb_human3.TabStop = false;
-            // 
-            // pb_human2
-            // 
-            this.pb_human2.Location = new System.Drawing.Point(80, 10);
-            this.pb_human2.Margin = new System.Windows.Forms.Padding(2);
-            this.pb_human2.Name = "pb_human2";
-            this.pb_human2.Size = new System.Drawing.Size(50, 84);
-            this.pb_human2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_human2.TabIndex = 2;
-            this.pb_human2.TabStop = false;
-            // 
-            // pb_human1
-            // 
-            this.pb_human1.Location = new System.Drawing.Point(10, 10);
-            this.pb_human1.Margin = new System.Windows.Forms.Padding(2);
-            this.pb_human1.Name = "pb_human1";
-            this.pb_human1.Size = new System.Drawing.Size(50, 84);
-            this.pb_human1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_human1.TabIndex = 2;
-            this.pb_human1.TabStop = false;
-            // 
-            // btn_ready
-            // 
-            this.btn_ready.Enabled = false;
-            this.btn_ready.Location = new System.Drawing.Point(298, 72);
-            this.btn_ready.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_ready.Name = "btn_ready";
-            this.btn_ready.Size = new System.Drawing.Size(102, 38);
-            this.btn_ready.TabIndex = 8;
-            this.btn_ready.Text = "준비";
-            this.btn_ready.UseVisualStyleBackColor = true;
-            // 
-            // btn_help
-            // 
-            this.btn_help.Location = new System.Drawing.Point(298, 10);
-            this.btn_help.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_help.Name = "btn_help";
-            this.btn_help.Size = new System.Drawing.Size(102, 38);
-            this.btn_help.TabIndex = 7;
-            this.btn_help.Text = "도움말";
-            this.btn_help.UseVisualStyleBackColor = true;
-            this.btn_help.Click += new System.EventHandler(this.btn_help_Click);
-            // 
-            // pnl_bottom
-            // 
-            this.pnl_bottom.BackColor = System.Drawing.SystemColors.Info;
-            this.pnl_bottom.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnl_bottom.Controls.Add(this.btn_Roll);
-            this.pnl_bottom.Controls.Add(this.pb_yut4);
-            this.pnl_bottom.Controls.Add(this.pb_yut3);
-            this.pnl_bottom.Controls.Add(this.pb_yut2);
-            this.pnl_bottom.Controls.Add(this.pb_yut1);
-            this.pnl_bottom.Location = new System.Drawing.Point(798, 425);
-            this.pnl_bottom.Margin = new System.Windows.Forms.Padding(2);
-            this.pnl_bottom.Name = "pnl_bottom";
-            this.pnl_bottom.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.pnl_bottom.Size = new System.Drawing.Size(409, 213);
-            this.pnl_bottom.TabIndex = 8;
-            // 
-            // btn_Roll
-            // 
-            this.btn_Roll.Location = new System.Drawing.Point(161, 166);
-            this.btn_Roll.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_Roll.Name = "btn_Roll";
-            this.btn_Roll.Size = new System.Drawing.Size(102, 38);
-            this.btn_Roll.TabIndex = 9;
-            this.btn_Roll.Text = "던지기";
-            this.btn_Roll.UseVisualStyleBackColor = true;
-            this.btn_Roll.Click += new System.EventHandler(this.btn_Roll_Click);
-            // 
-            // pb_yut4
-            // 
-            this.pb_yut4.Image = ((System.Drawing.Image)(resources.GetObject("pb_yut4.Image")));
-            this.pb_yut4.Location = new System.Drawing.Point(298, 8);
-            this.pb_yut4.Margin = new System.Windows.Forms.Padding(12, 2, 12, 2);
-            this.pb_yut4.Name = "pb_yut4";
-            this.pb_yut4.Size = new System.Drawing.Size(40, 120);
-            this.pb_yut4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_yut4.TabIndex = 2;
-            this.pb_yut4.TabStop = false;
-            // 
-            // pb_yut3
-            // 
-            this.pb_yut3.Image = ((System.Drawing.Image)(resources.GetObject("pb_yut3.Image")));
-            this.pb_yut3.Location = new System.Drawing.Point(222, 8);
-            this.pb_yut3.Margin = new System.Windows.Forms.Padding(12, 2, 12, 2);
-            this.pb_yut3.Name = "pb_yut3";
-            this.pb_yut3.Size = new System.Drawing.Size(40, 120);
-            this.pb_yut3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_yut3.TabIndex = 2;
-            this.pb_yut3.TabStop = false;
-            // 
-            // pb_yut2
-            // 
-            this.pb_yut2.Image = ((System.Drawing.Image)(resources.GetObject("pb_yut2.Image")));
-            this.pb_yut2.Location = new System.Drawing.Point(148, 8);
-            this.pb_yut2.Margin = new System.Windows.Forms.Padding(12, 2, 12, 2);
-            this.pb_yut2.Name = "pb_yut2";
-            this.pb_yut2.Size = new System.Drawing.Size(40, 120);
-            this.pb_yut2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_yut2.TabIndex = 2;
-            this.pb_yut2.TabStop = false;
-            // 
-            // pb_yut1
-            // 
-            this.pb_yut1.Location = new System.Drawing.Point(72, 8);
-            this.pb_yut1.Margin = new System.Windows.Forms.Padding(12, 2, 12, 2);
-            this.pb_yut1.Name = "pb_yut1";
-            this.pb_yut1.Size = new System.Drawing.Size(40, 120);
-            this.pb_yut1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_yut1.TabIndex = 2;
-            this.pb_yut1.TabStop = false;
-            // 
-            // img_pNumber
-            // 
-            this.img_pNumber.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("img_pNumber.ImageStream")));
-            this.img_pNumber.TransparentColor = System.Drawing.Color.Transparent;
-            this.img_pNumber.Images.SetKeyName(0, "P1.png");
-            this.img_pNumber.Images.SetKeyName(1, "2P.png");
-            this.img_pNumber.Images.SetKeyName(2, "3P.png");
-            this.img_pNumber.Images.SetKeyName(3, "4P.png");
-            // 
-            // img_pHuman
-            // 
-            this.img_pHuman.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("img_pHuman.ImageStream")));
-            this.img_pHuman.TransparentColor = System.Drawing.Color.Transparent;
-            this.img_pHuman.Images.SetKeyName(0, "human_blank.png");
-            this.img_pHuman.Images.SetKeyName(1, "player1.png");
-            this.img_pHuman.Images.SetKeyName(2, "player2.png");
-            this.img_pHuman.Images.SetKeyName(3, "player3.png");
-            this.img_pHuman.Images.SetKeyName(4, "player4.png");
-            // 
-            // img_BigStep
-            // 
-            this.img_BigStep.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("img_BigStep.ImageStream")));
-            this.img_BigStep.TransparentColor = System.Drawing.Color.Transparent;
-            this.img_BigStep.Images.SetKeyName(0, "BigStep.png");
-            this.img_BigStep.Images.SetKeyName(1, "goalStep.png");
-            this.img_BigStep.Images.SetKeyName(2, "islandStep.png");
-            this.img_BigStep.Images.SetKeyName(3, "BigkeyStep.png");
-            // 
-            // img_SmallStep
-            // 
-            this.img_SmallStep.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("img_SmallStep.ImageStream")));
-            this.img_SmallStep.TransparentColor = System.Drawing.Color.Transparent;
-            this.img_SmallStep.Images.SetKeyName(0, "smallStep.png");
-            this.img_SmallStep.Images.SetKeyName(1, "keyStep.png");
             // 
             // img_yut
             // 
@@ -880,36 +861,33 @@
             this.img_yut.Images.SetKeyName(2, "yut_back1.png");
             this.img_yut.Images.SetKeyName(3, "yut_back2.png");
             // 
-            // img_character
-            // 
-            this.img_character.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("img_character.ImageStream")));
-            this.img_character.TransparentColor = System.Drawing.Color.Transparent;
-            this.img_character.Images.SetKeyName(0, "pawn_1P.png");
-            this.img_character.Images.SetKeyName(1, "pawn_2P.png");
-            this.img_character.Images.SetKeyName(2, "pawn_3P.png");
-            this.img_character.Images.SetKeyName(3, "pawn_4P.png");
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Yutnori.Properties.Resources.background;
-            this.ClientSize = new System.Drawing.Size(1222, 653);
-            this.Controls.Add(this.pnl_top);
-            this.Controls.Add(this.pnl_game);
+            this.ClientSize = new System.Drawing.Size(978, 544);
             this.Controls.Add(this.pnl_middle);
             this.Controls.Add(this.pnl_bottom);
+            this.Controls.Add(this.pnl_top);
+            this.Controls.Add(this.pnl_game);
             this.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.Name = "Form1";
             this.Text = "Yutnori";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.pnl_top.ResumeLayout(false);
-            this.pnl_top.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_chat)).EndInit();
-            this.pnl_game.ResumeLayout(false);
+            this.pnl_middle.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_human4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_human3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_human2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_human1)).EndInit();
             this.pnl_login.ResumeLayout(false);
             this.pnl_login.PerformLayout();
+            this.pnl_bottom.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_yut4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_yut3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_yut2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_yut1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Step_16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Step_17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Step_9)).EndInit();
@@ -926,6 +904,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.Step_19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Step_110)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Step_6)).EndInit();
+            this.pnl_top.ResumeLayout(false);
+            this.pnl_top.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_chat)).EndInit();
+            this.pnl_game.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Step_4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Step_3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Step_11)).EndInit();
@@ -939,56 +921,46 @@
             ((System.ComponentModel.ISupportInitialize)(this.Step_10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Step_0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Step_5)).EndInit();
-            this.pnl_middle.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pb_human4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_human3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_human2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_human1)).EndInit();
-            this.pnl_bottom.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pb_yut4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_yut3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_yut2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_yut1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel pnl_top;
-        private System.Windows.Forms.PictureBox pb_chat;
-        private System.Windows.Forms.Button btn_send;
-        private System.Windows.Forms.TextBox txt_send;
-        private System.Windows.Forms.Panel pnl_game;
         private System.Windows.Forms.Panel pnl_middle;
-        private System.Windows.Forms.Button btn_ready;
-        private System.Windows.Forms.Button btn_help;
-        private System.Windows.Forms.Panel pnl_bottom;
-        private System.Windows.Forms.Button btn_Roll;
-        private System.Windows.Forms.Panel pnl_login;
-        private System.Windows.Forms.TextBox txt_port;
-        private System.Windows.Forms.Label ip_port;
-        private System.Windows.Forms.TextBox txt_ip;
-        private System.Windows.Forms.Label lbl_ip;
-        private System.Windows.Forms.Button btn_Client;
-        private System.Windows.Forms.Button btn_Host;
-        private System.Windows.Forms.Label lbl_loginAlert;
-        private System.Windows.Forms.TextBox txt_nickname;
-        private System.Windows.Forms.Label lbl_nickname;
-        private System.Windows.Forms.ImageList img_pNumber;
-        private System.Windows.Forms.RichTextBox rtb_chat;
         private System.Windows.Forms.PictureBox pb_human4;
         private System.Windows.Forms.PictureBox pb_human3;
         private System.Windows.Forms.PictureBox pb_human2;
         private System.Windows.Forms.PictureBox pb_human1;
-        private System.Windows.Forms.ImageList img_pHuman;
+        private System.Windows.Forms.Button btn_ready;
+        private System.Windows.Forms.Button btn_help;
+        private System.Windows.Forms.Panel pnl_login;
+        private System.Windows.Forms.Label lbl_loginAlert;
+        private System.Windows.Forms.TextBox txt_port;
+        private System.Windows.Forms.Label ip_port;
+        private System.Windows.Forms.TextBox txt_nickname;
+        private System.Windows.Forms.TextBox txt_ip;
+        private System.Windows.Forms.Label lbl_nickname;
+        private System.Windows.Forms.Label lbl_ip;
+        private System.Windows.Forms.Button btn_Client;
+        private System.Windows.Forms.Button btn_Host;
+        private System.Windows.Forms.Panel pnl_bottom;
+        private System.Windows.Forms.Button btn_Roll;
+        private System.Windows.Forms.PictureBox pb_yut4;
+        private System.Windows.Forms.PictureBox pb_yut3;
+        private System.Windows.Forms.PictureBox pb_yut2;
+        private System.Windows.Forms.PictureBox pb_yut1;
         private System.Windows.Forms.PictureBox Step_16;
+        private System.Windows.Forms.ImageList img_character;
+        private System.Windows.Forms.ImageList img_SmallStep;
         private System.Windows.Forms.PictureBox Step_17;
         private System.Windows.Forms.PictureBox Step_9;
         private System.Windows.Forms.PictureBox Step_18;
         private System.Windows.Forms.PictureBox Step_8;
         private System.Windows.Forms.PictureBox Step_7;
         private System.Windows.Forms.PictureBox Step_107;
+        private System.Windows.Forms.ImageList img_pHuman;
+        private System.Windows.Forms.ImageList img_pNumber;
         private System.Windows.Forms.PictureBox Step_215;
         private System.Windows.Forms.PictureBox Step_211;
         private System.Windows.Forms.PictureBox Step_212;
@@ -997,7 +969,14 @@
         private System.Windows.Forms.PictureBox Step_109;
         private System.Windows.Forms.PictureBox Step_19;
         private System.Windows.Forms.PictureBox Step_110;
+        private System.Windows.Forms.ImageList img_BigStep;
         private System.Windows.Forms.PictureBox Step_6;
+        private System.Windows.Forms.Panel pnl_top;
+        private System.Windows.Forms.RichTextBox rtb_chat;
+        private System.Windows.Forms.PictureBox pb_chat;
+        private System.Windows.Forms.Button btn_send;
+        private System.Windows.Forms.TextBox txt_send;
+        private System.Windows.Forms.Panel pnl_game;
         private System.Windows.Forms.PictureBox Step_4;
         private System.Windows.Forms.PictureBox Step_3;
         private System.Windows.Forms.PictureBox Step_11;
@@ -1011,14 +990,7 @@
         private System.Windows.Forms.PictureBox Step_10;
         private System.Windows.Forms.PictureBox Step_0;
         private System.Windows.Forms.PictureBox Step_5;
-        private System.Windows.Forms.ImageList img_BigStep;
-        private System.Windows.Forms.ImageList img_SmallStep;
         private System.Windows.Forms.ImageList img_yut;
-        private System.Windows.Forms.ImageList img_character;
-        private System.Windows.Forms.PictureBox pb_yut4;
-        private System.Windows.Forms.PictureBox pb_yut3;
-        private System.Windows.Forms.PictureBox pb_yut2;
-        private System.Windows.Forms.PictureBox pb_yut1;
     }
 }
 
