@@ -49,6 +49,7 @@ namespace Yutnori
         Socket client_socket;   // 클라이언트가 서버와 연결한 소켓
         string my_nickname = "Client";  // 클라이언트 자신의 닉네임
         int my_player_num = -1;     // 클라이언트 자신의 플레이어 번호
+        int current_player_num = -1;    // 현재 접속한 플레이어 수 - 동기화를 위한 변수
         
         PHASE phase = PHASE.LOGIN;           // 게임의 현재 페이즈
         enum PHASE //게임 페이즈
@@ -336,23 +337,6 @@ namespace Yutnori
                 pnl_login.Visible = false;
 
                 phase = PHASE.LOBBY;    // 로비로 이동.(준비 전 상태)
-
-                // 플레이어별로 다른 이미지 표시
-                switch(my_player_num)
-                {
-                    case 2:
-                        pb_chat.Image = img_pNumber.Images[1];
-                        pb_human2.Image = img_pHuman.Images[0];
-                        break;
-                    case 3:
-                        pb_chat.Image = img_pNumber.Images[2];
-                        pb_human3.Image = img_pHuman.Images[0];
-                        break;
-                    case 4:
-                        pb_chat.Image = img_pNumber.Images[3];
-                        pb_human4.Image = img_pHuman.Images[0];
-                        break;
-                }
                 
                 // 채팅창을 사용 가능하도록 변경
                 txt_send.Enabled = true;
@@ -473,9 +457,27 @@ namespace Yutnori
             // 클라이언트에게 플레이어 번호를 할당해준다.
             SendPlayerNum();
 
+            switch (player_count)
+            {
+                case 2:
+                    pb_human2.Image = img_pHuman.Images[0];
+                    break;
+                case 3:
+                    pb_human2.Image = img_pHuman.Images[0];
+                    pb_human3.Image = img_pHuman.Images[0];
+                    break;
+                case 4:
+                    pb_human2.Image = img_pHuman.Images[0];
+                    pb_human3.Image = img_pHuman.Images[0];
+                    pb_human4.Image = img_pHuman.Images[0];
+                    break;
+            }
+
             // 모든 클라이언트에게 마지막 클라이언트가 연결되었다고 써준다.
             // 문자열을 utf8 형식의 바이트로 변환한다.
-            byte[] bDts = Encoding.UTF8.GetBytes(string.Format("<System>{0}({1}P)님이 입장하였습니다.", client_nickname, player_count));
+            // 현재 접속한 플레이어 수와 클라이언트 연결 메세지를 보낸다.
+            string tts = string.Format("<System>{0}({1}P)님이 입장하였습니다.", client_nickname, player_count);
+            byte[] bDts = Encoding.UTF8.GetBytes(player_count.ToString() + '\x01' + tts);
 
             // 연결된 모든 클라이언트에게 전송한다.
             //for(int i = connected_clients.Count - 1; i >= 0; i--)
@@ -542,14 +544,14 @@ namespace Yutnori
                 // 따라서 대리자를 통해 처리한다.(Invoke))
                 AppendText(rtb_chat, string.Format("({0}P){1}: {2}", player_num, nickname, msg));
             }
-            else // 토큰이 하나이면 <System> 메세지이다.
-            
+            else if (tokens.Length == 2) // 토큰이 둘이면 <System> 메세지이다.
             {
-                string system_msg = text;
+                current_player_num = Int32.Parse(tokens[0]);
+                string system_msg = tokens[1].Trim('\0');
                 // 텍스트 박스에 추가해준다.
                 // (비동기식으로 작업하기 때문에 폼이 UI 스레드에서 작업을 해줘야 한다.
                 // 따라서 대리자를 통해 처리한다.(Invoke))
-                AppendText(rtb_chat, text);
+                AppendText(rtb_chat, system_msg);
             }
 
             if (is_server)  // 함수를 호출한 프로세스가 서버이면
@@ -586,8 +588,31 @@ namespace Yutnori
                 // 같은 방법으로 수신을 대기한다.
                 obj.WorkingSocket.BeginReceive(obj.Buffer, 0, 4096, 0, DataReceived, obj);
             }
-            else
+            else // 함수를 호출한 프로세스가 클라이언트이면
             {
+                // 플레이어의 접속 이미지를 동기화 한다.
+                switch (current_player_num)
+                {
+                    case 2:
+                        pb_chat.Image = img_pNumber.Images[1];
+                        pb_human1.Image = img_pHuman.Images[0];
+                        pb_human2.Image = img_pHuman.Images[0];
+                        break;
+                    case 3:
+                        pb_chat.Image = img_pNumber.Images[2];
+                        pb_human1.Image = img_pHuman.Images[0];
+                        pb_human2.Image = img_pHuman.Images[0];
+                        pb_human3.Image = img_pHuman.Images[0];
+                        break;
+                    case 4:
+                        pb_chat.Image = img_pNumber.Images[3];
+                        pb_human1.Image = img_pHuman.Images[0];
+                        pb_human2.Image = img_pHuman.Images[0];
+                        pb_human3.Image = img_pHuman.Images[0];
+                        pb_human4.Image = img_pHuman.Images[0];
+                        break;
+                }
+
                 // 클라이언트에선 데이터를 전달해줄 필요가 없으므로 바로 수신 대기한다.
                 // 데이터를 받은 후엔 다시 버퍼를 비워주고
                 obj.ClearBuffer();
@@ -596,221 +621,8 @@ namespace Yutnori
                 obj.WorkingSocket.BeginReceive(obj.Buffer, 0, 4096, 0, DataReceived, obj);
             }
         }
-
         
-        // 기존 함수들 - 지워도 될 듯
-        public void Message(string msg)
-        {
-            this.Invoke(new MethodInvoker(delegate ()
-            {
-                rtb_chat.AppendText(msg + "\r\n");
-                //채팅 메세지중 '1P'~'4P'는 각각 색깔 배정하도록 하기
-                //rtb_chat.Select()
-                rtb_chat.Focus();
-                rtb_chat.ScrollToCaret();
-            }));
-        }
-
-        public void ServerStart()
-        {/*
-            int port;
-            if (!int.TryParse(txt_port.Text, out port))
-            {
-                lbl_loginAlert.ForeColor = Color.Red;
-                lbl_loginAlert.Text = "잘못된 PORT입니다.";
-
-                txt_port.Focus();
-                txt_port.SelectAll();
-                return;
-            }
-            if(txt_nickname.Text == "")
-            {
-                lbl_loginAlert.ForeColor = Color.Red;
-                lbl_loginAlert.Text = "닉네임을 입력하십시오.";
-
-                txt_nickname.Focus();
-                txt_nickname.SelectAll();
-                return;
-            }
-
-            //컨트롤 변형
-            lbl_loginAlert.ForeColor = Color.Black;
-            lbl_loginAlert.Text = "생성중...";
-
-            txt_ip.ReadOnly = true;
-            txt_port.ReadOnly = true;
-            txt_nickname.ReadOnly = true;
-            btn_Host.Enabled = false;
-            btn_Client.Enabled = false;
-
-            // 서버에서 클라이언트의 연결 요청을 대기하기 위해
-            // 소켓을 열어둔다.
-            IPEndPoint serverEP = new IPEndPoint(IPAddress.Any, port);
-            mainSock.Bind(serverEP);
-            mainSock.Listen(5);
-
-            is_server_on = true;
-
-            //게임인터페이스로 이동
-            pnl_login.Visible = false;
-
-            phase = PHASE.LOBBY;
-            pb_chat.Image = img_pNumber.Images[0];
-            pb_human1.Image = img_pHuman.Images[0];
-            txt_send.Enabled = true;
-            btn_send.Enabled = true;
-            btn_ready.Enabled = true;
-            Message("<System>" + txt_nickname.Text + "(" + 1 + "P)님이 입장하였습니다.");
-       */
-        }
-
-        public void ServerStop()
-        {/*
-            if (!is_server_on)
-                return;
-
-            //m_listener.Stop();  //서버 소켓 작동 중지
-
-
-
-            if (m_ThReader != null) m_ThReader.Abort(); //서버 소켓 스레드 종료
-            if (m_thServer != null) m_thServer.Abort(); //스레드 종료
-
-            //Message("서비스 종료");
-
-            this.Invoke(new MethodInvoker(delegate ()
-            {
-                lbl_loginAlert.Text = "";
-
-                txt_ip.ReadOnly = false;
-                txt_port.ReadOnly = false;
-                txt_nickname.ReadOnly = false;
-                btn_Host.Enabled = true;
-                btn_Client.Enabled = true;
-            }));*/
-        }
-
-        public void Connect()
-        {/*
-            if (mainSock.Connected)
-            {
-                this.Invoke(new MethodInvoker(delegate ()
-                {
-                    lbl_loginAlert.ForeColor = Color.Red;
-                    lbl_loginAlert.Text = "이미 연결되어 있습니다!";
-                }));
-                return;
-            }
-
-            int port;
-            if (!int.TryParse(txt_port.Text, out port))
-            {
-                this.Invoke(new MethodInvoker(delegate ()
-                {
-                    lbl_loginAlert.ForeColor = Color.Red;
-                    lbl_loginAlert.Text = "잘못된 PORT입니다.";
-
-                    txt_port.Focus();
-                    txt_port.SelectAll();
-                }));
-                return;
-            }
-            if (txt_nickname.Text == "")
-            {
-                this.Invoke(new MethodInvoker(delegate ()
-                {
-                    lbl_loginAlert.ForeColor = Color.Red;
-                    lbl_loginAlert.Text = "닉네임을 입력하십시오.";
-
-                    txt_nickname.Focus();
-                    txt_nickname.SelectAll();
-                }));
-                return;
-            }
-
-            this.Invoke(new MethodInvoker(delegate ()
-            {
-                lbl_loginAlert.ForeColor = Color.Black;
-                lbl_loginAlert.Text = "호스트에 연결시도중...";
-
-                txt_ip.ReadOnly = true;
-                txt_port.ReadOnly = true;
-                txt_nickname.ReadOnly = true;
-                btn_Host.Enabled = false;
-
-                btn_Client.Enabled = false;
-                //btn_Client.Text = "취소";
-            }));
-
-            try { mainSock.Connect(txt_ip.Text, port); }
-            catch (Exception)
-            {
-                this.Invoke(new MethodInvoker(delegate ()
-                {
-                    lbl_loginAlert.ForeColor = Color.Red;
-                    lbl_loginAlert.Text = "연결에 실패하였습니다!";
-
-                    txt_ip.ReadOnly = false;
-                    txt_port.ReadOnly = false;
-                    txt_nickname.ReadOnly = false;
-                    btn_Host.Enabled = true;
-
-                    btn_Client.Enabled = true;
-                    //btn_Client.Text = "입장";
-                }));
-                return;
-            }
-            
-            // 연결 완료되었다는 메세지를 띄워준다.
-            AppendText(txtHistory, "서버와 연결되었습니다.");
-
-            // 연결 완료, 서버에서 데이터가 올 수 있으므로 수신 대기한다.
-            AsyncObject obj = new AsyncObject(4096);
-            obj.WorkingSocket = mainSock;
-            mainSock.BeginReceive(obj.Buffer, 0, obj.BufferSize, 0, DataReceived, obj);
-            //-----------
-            m_Client = new TcpClient();
-            try
-            {
-                //포트입력 예외처리
-                int PORT = int.Parse(txt_port.Text);
-                m_Client.Connect(txt_ip.Text, int.Parse(txt_port.Text));
-            }
-            catch
-            {
-                lbl_loginAlert.ForeColor = Color.Red;
-                lbl_loginAlert.Text = "잘못된 IP 혹은 PORT입니다.";
-                is_connected = false;
-                return;
-            }
-            is_connected = true;
-
-            
-
-            m_Stream = m_Client.GetStream();
-
-            m_Read = new StreamReader(m_Stream);
-            m_Write = new StreamWriter(m_Stream);
-            */
-        }
-
-        public void Disconnect()
-        {
-            /*if (mainSock.Connected) mainSock.Disconnect(true);
-
-            if (m_thClient != null) m_thClient.Abort(); //스레드 종료
-            this.Invoke(new MethodInvoker(delegate ()
-            {
-                lbl_loginAlert.Text = "";
-
-                txt_ip.ReadOnly = false;
-                txt_port.ReadOnly = false;
-                txt_nickname.ReadOnly = false;
-                btn_Host.Enabled = true;
-                btn_Client.Text = "입장";
-            }));*/
-        }
-        
+        // 엔터키를 누르면 send버튼 작동
         private void txt_send_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
